@@ -13,18 +13,37 @@ import PhanLoai from 'app/common/PhanLoai';
 const { Column, HeaderCell, Cell } = Table;
 const Container = styled("div")(({ theme }) => ({
     margin: "20px 20px 5px 20px",
+
     [theme.breakpoints.down("sm")]: { margin: "16px" },
     "& .breadcrumb": {
         marginBottom: "20px",
         [theme.breakpoints.down("sm")]: { marginBottom: "16px" },
     },
 }));
+const CheckCell = ({ rowData, onChange, checkedKeys, dataKey, ...props }) => (
+    <Cell {...props} style={{ padding: 0 }}>
+        <div style={{ lineHeight: '36px' }}>
+            <Checkbox
+                value={rowData[dataKey]}
+                inline
+                onChange={onChange}
+                checked={checkedKeys.some(item => item === rowData[dataKey])}
+            />
+        </div>
+    </Cell>
+);
+const CompactCell = props => <Cell {...props} style={{ padding: 10 }} />;
+const CompactHeaderCell = props => <HeaderCell {...props} style={{ padding: 10 }} />;
+const CompactHeaderCellCheck = props => <HeaderCell {...props} style={{ padding: 0 }} />;
 
 const DangVienChiBoTable = () => {
     const [searchKeyword, setSearchKeyword] = useState('');
     const [loading, setLoading] = useState(true);
     const [listChiBoMD, setListChiBoMD] = useState([]);
     const [listChiBo, setListChiBo] = useState([]);
+    const CustomCell = CompactCell;
+    const CustomHeaderCell = CompactHeaderCell;
+    const CustomHeaderCellCheck = CompactHeaderCellCheck;
     var isMounted = true;
     useEffect(() => {
         isMounted = true;
@@ -175,38 +194,38 @@ const DangVienChiBoTable = () => {
 
                     </Stack>
                 </Stack>
-                <Table virtualized height={570} data={listChiBo} id="table" className='table' loading={loading} bordered={true} cellBordered={true}>
+                <Table virtualized height={570} data={listChiBo} id="table" className='table' loading={loading} bordered={true} cellBordered={true} headerHeight={35} rowHeight={35} shouldUpdateScroll={false}>
 
                     <Column width={45} align="center" >
-                        <HeaderCell>STT</HeaderCell>
-                        <Cell>{(rowData, rowIndex) => (rowData.id != undefined ? rowIndex + 1 : "")}</Cell>
+                        <CustomHeaderCell>STT</CustomHeaderCell>
+                        <CustomCell>{(rowData, rowIndex) => (rowData.id != undefined ? rowIndex + 1 : "")}</CustomCell>
                     </Column>
                     <Column width={360} resizable>
-                        <HeaderCell align={"center"}>TÊN CHI BỘ</HeaderCell>
-                        <Cell>{(rowData, rowIndex) => (rowData.id != undefined ? rowData.hoTen : <b>{rowData.hoTen}</b>)}</Cell>
+                        <CustomHeaderCell align={"center"}>TÊN CHI BỘ</CustomHeaderCell>
+                        <CustomCell>{(rowData, rowIndex) => (rowData.id != undefined ? rowData.hoTen : <b>{rowData.hoTen}</b>)}</CustomCell>
                     </Column>
 
                     <Column width={100}>
-                        <HeaderCell align={"center"}>NAM</HeaderCell>
-                        <Cell dataKey="nam" align={"center"} />
+                        <CustomHeaderCell align={"center"}>NAM</CustomHeaderCell>
+                        <CustomCell dataKey="nam" align={"center"} />
                     </Column>
                     <Column width={100}>
-                        <HeaderCell align={"center"}>NỮ</HeaderCell>
-                        <Cell dataKey="nu" align={"center"} />
+                        <CustomHeaderCell align={"center"}>NỮ</CustomHeaderCell>
+                        <CustomCell dataKey="nu" align={"center"} />
                     </Column>
 
                     <Column width={100}>
-                        <HeaderCell align={"center"}>ĐẢNG VIÊN</HeaderCell>
+                        <CustomHeaderCell align={"center"}>ĐẢNG VIÊN</CustomHeaderCell>
 
-                        <Cell align={"center"}>{rowData => rowData.slDV + rowData.slDVDB}</Cell>
+                        <CustomCell align={"center"}>{rowData => rowData.slDV + rowData.slDVDB}</CustomCell>
                     </Column>
                     <Column width={100}>
-                        <HeaderCell align={"center"}>ĐV DỰ BỊ</HeaderCell>
-                        <Cell dataKey="slDVDB" align={"center"} />
+                        <CustomHeaderCell align={"center"}>ĐV DỰ BỊ</CustomHeaderCell>
+                        <CustomCell dataKey="slDVDB" align={"center"} />
                     </Column>
                     <Column width={350}>
-                        <HeaderCell align={"center"}>TÊN ĐV DỰ BỊ</HeaderCell>
-                        <Cell dataKey="tenDVDB" />
+                        <CustomHeaderCell align={"center"}>TÊN ĐV DỰ BỊ</CustomHeaderCell>
+                        <CustomCell dataKey="tenDVDB" />
                     </Column>
                 </Table>
 

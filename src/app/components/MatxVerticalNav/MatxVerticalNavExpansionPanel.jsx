@@ -4,30 +4,7 @@ import clsx from 'clsx';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const NavExpandRoot = styled('div')(({ theme }) => ({
-  '& .expandIcon': {
-    transition: 'transform 0.3s cubic-bezier(0, 0, 0.2, 1) 0ms',
-    transform: 'rotate(90deg)',
-  },
-  '& .collapseIcon': {
-    transition: 'transform 0.3s cubic-bezier(0, 0, 0.2, 1) 0ms',
-    transform: 'rotate(0deg)',
-  },
-  '& .expansion-panel': {
-    overflow: 'hidden',
-    transition: 'max-height 0.3s cubic-bezier(0, 0, 0.2, 1)',
-  },
-  '& .highlight': {
-    background: theme.palette.primary.main,
-  },
-  '&.compactNavItem': {
-    width: 44,
-    overflow: 'hidden',
-    justifyContent: 'center !important',
-    '& .itemText': { display: 'none' },
-    '& .itemIcon': { display: 'none' },
-  },
-}));
+
 
 const BaseButton = styled(ButtonBase)(({ theme }) => ({
   height: 44,
@@ -80,7 +57,33 @@ const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
   const componentHeight = useRef(0);
   const { pathname } = useLocation();
   const { name, icon, iconText, badge } = item;
+  const NavExpandRoot = styled('div')(({ theme }) => ({
+    background: !collapsed ? '#9e0000cf' : "unset",
+    borderRadius: "8px",
 
+    '& .expandIcon': {
+      transition: 'transform 0.3s cubic-bezier(0, 0, 0.2, 1) 0ms',
+      transform: 'rotate(90deg)',
+    },
+    '& .collapseIcon': {
+      transition: 'transform 0.3s cubic-bezier(0, 0, 0.2, 1) 0ms',
+      transform: 'rotate(0deg)',
+    },
+    '& .expansion-panel': {
+      overflow: 'hidden',
+      transition: 'max-height 0.3s cubic-bezier(0, 0, 0.2, 1)',
+    },
+    '& .highlight': {
+      background: theme.palette.primary.main,
+    },
+    '&.compactNavItem': {
+      width: 44,
+      overflow: 'hidden',
+      justifyContent: 'center !important',
+      '& .itemText': { display: 'none' },
+      '& .itemIcon': { display: 'none' },
+    },
+  }));
   const handleClick = () => {
     componentHeight.current = 0;
     calcaulateHeight(elementRef.current);
@@ -137,7 +140,7 @@ const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
             expandIcon: !collapsed,
           })}
         >
-          <Icon fontSize="small" sx={{ verticalAlign: 'middle' }}>
+          <Icon fontSize="small" sx={{ verticalAlign: 'middle', marginRight: "5px" }}>
             chevron_right
           </Icon>
         </div>

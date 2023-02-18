@@ -9,6 +9,14 @@ import MatxLayout from './components/MatxLayout/MatxLayout';
 
 import { lazy } from 'react';
 import Loadable from 'app/components/Loadable';
+import ThongKe1Page from './views/thongke/tonghop/ThongKe1Page';
+import ThongKe2Page from './views/thongke/tonghop/ThongKe2Page';
+import ThongKe3Page from './views/thongke/tonghop/ThongKe3Page';
+import ThongKe4Page from './views/thongke/tonghop/ThongKe4Page';
+import ThongKe5Page from './views/thongke/tonghop/ThongKe5Page';
+import ThongKe6Page from './views/thongke/tonghop/ThongKe6Page';
+import ThongKe7Page from './views/thongke/tonghop/ThongKe7Page';
+import CoCauToChucTable from './views/cocautochuc/CoCauToChucTable';
 
 const BaoCaoKetQuaDanhGiaTable = Loadable(lazy(() => import('./views/thongke/dangvien/baocaoketquadanhgia/BaoCaoKetQuaDanhGiaTable')));
 const DangVienXuatSacTable = Loadable(lazy(() => import('./views/thongke/dangvien/theodoidangvienxuatsac/DangVienXuatSacTable')));
@@ -39,6 +47,17 @@ const routes = [
       { path: '/quanly/thongke/dangvien/xuatsac', element: <DangVienXuatSacTable /> },
       { path: '/quanly/thongke/dangvien/baocaoketqua', element: <BaoCaoKetQuaDanhGiaTable /> },
       { path: '/quanly/lichsu', element: <LichSuTable /> },
+      { path: '/quanly/thongke/tonghop/thongke1', element: <ThongKe1Page /> },
+      { path: '/quanly/thongke/tonghop/thongke2', element: <ThongKe2Page /> },
+      { path: '/quanly/thongke/tonghop/thongke3', element: <ThongKe3Page /> },
+      { path: '/quanly/thongke/tonghop/thongke4', element: <ThongKe4Page /> },
+      { path: '/quanly/thongke/tonghop/thongke5', element: <ThongKe5Page /> },
+      { path: '/quanly/thongke/tonghop/thongke6', element: <ThongKe6Page /> },
+      { path: '/quanly/thongke/tonghop/thongke7', element: <ThongKe7Page /> },
+
+
+      { path: '/quanly/cocautochuc', element: <CoCauToChucTable /> },
+
       ...dashboardRoutes,
       // ...chartsRoute, 
       // ...materialRoutes

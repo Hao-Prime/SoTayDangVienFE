@@ -61,7 +61,7 @@ const StyledText = styled(Span)(({ mode }) => ({
 const BulletIcon = styled('div')(({ theme }) => ({
   padding: '2px',
   marginLeft: '24px',
-  marginRight: '8px',
+  marginRight: '1px',
   overflow: 'hidden',
   borderRadius: '300px',
   background: theme.palette.text.primary,

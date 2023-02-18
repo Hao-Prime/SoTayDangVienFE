@@ -21,8 +21,9 @@ const Container = styled("div")(({ theme }) => ({
         [theme.breakpoints.down("sm")]: { marginBottom: "16px" },
     },
 }));
-const CompactCell = props => <Cell {...props} style={{ padding: 7 }} />;
-const CompactHeaderCell = props => <HeaderCell {...props} style={{ padding: 7 }} />;
+const CompactCell = props => <Cell {...props} style={{ padding: 10 }} />;
+const CompactHeaderCell = props => <HeaderCell {...props} style={{ padding: 10 }} />;
+const CompactHeaderCellCheck = props => <HeaderCell {...props} style={{ padding: 0 }} />;
 
 const XepLoaiChiBoTable = () => {
     const [searchKeyword, setSearchKeyword] = useState('');
@@ -193,9 +194,9 @@ const XepLoaiChiBoTable = () => {
                         shouldUpdateScroll={false}
                         rowKey="hoTen"
                         height={570}
-                        headerHeight={35}
-                        rowHeight={35}
+
                         data={listChiBo} bordered={true} cellBordered={true}
+                        headerHeight={35} rowHeight={35}
                         id="table" className='table' loading={loading}
 
                         onExpandChange={(isOpen, rowData) => {

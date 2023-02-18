@@ -10,7 +10,7 @@ import { Input, InputGroup } from 'rsuite';
 import { Icon } from '@mui/material';
 const StyledScrollBar = styled(Scrollbar)(() => ({
   paddingLeft: '1rem',
-  paddingRight: '1rem',
+  paddingRight: '10px',
   position: 'relative',
 }));
 
@@ -38,10 +38,10 @@ const Sidenav = ({ children }) => {
         if (isMounted) {
           if (response.data != null) {
             let rs = [...navigationsInit]
-            rs[2].badge.value = response.data.soLuongVanBan == 0 ? null : response.data.soLuongVanBan
-            rs[2].children[1].badge.value = response.data.soLuongVanBan == 0 ? null : response.data.soLuongVanBan
-            rs[3].badge.value = response.data.soLuongCongViec == 0 ? null : response.data.soLuongCongViec
-            rs[3].children[1].badge.value = response.data.soLuongCongViec == 0 ? null : response.data.soLuongCongViec
+            // rs[2].badge.value = response.data.soLuongVanBan == 0 ? null : response.data.soLuongVanBan
+            // rs[2].children[1].badge.value = response.data.soLuongVanBan == 0 ? null : response.data.soLuongVanBan
+            // rs[3].badge.value = response.data.soLuongCongViec == 0 ? null : response.data.soLuongCongViec
+            // rs[3].children[1].badge.value = response.data.soLuongCongViec == 0 ? null : response.data.soLuongCongViec
             setNavigationsInit(rs);
           }
         }

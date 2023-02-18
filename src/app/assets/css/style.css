@@ -1,3 +1,99 @@
+.table-thongke-cus .rs-table-cell-content {
+    white-space: unset;
+    color: black;
+    font-size: 13px;
+}
+
+.table-thongke-cus .rs-table-body-row-wrapper {
+    overflow: hidden !important;
+    overscroll-behavior-y: auto;
+}
+
+.table-thongke-cus-2 .rs-table-cell-content {
+    white-space: unset;
+    color: black;
+    font-size: 13px;
+}
+
+.table-pointer .rs-table-row {
+    cursor: pointer;
+}
+
+.padl-1 {
+    padding: 10px;
+}
+
+.padb-2 {
+    padding-bottom: 20px;
+}
+
+.padb-4 {
+    padding-bottom: 40px;
+}
+
+.cctc-simplesard {
+    border: 1px solid #e3e3e3;
+    border-radius: 9px;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 15px;
+}
+
+.border-input {
+    border: 1px solid #bebebe;
+    background-color: #ffffff;
+    padding: 3px 20px 3px 20px;
+    /* width: 70px; */
+
+}
+
+.cctc-ttc:hover {
+    box-shadow: 0px 0px 14px 1px #d6d6d6;
+}
+
+.img-ttc {
+    width: 80%;
+    max-width: 250px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.gray01 {
+    color: #949494;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+
+.black {
+    color: black;
+}
+
+.black-05 {
+    color: rgb(52, 52, 52);
+}
+
+.gray05 {
+    color: #1600b9;
+}
+
+.gray02 {
+    color: #1600b9;
+}
+
+.gray03 {
+    color: #1600b9;
+}
+
+.gray04 {
+    color: #1600b9;
+}
+
+.tieude-tt {
+    margin: 0px;
+}
+
 .icon-count {
     padding: 4px 6px 2px 6px;
     color: white;
@@ -34,6 +130,11 @@
 
 .icon-search {
     font-size: 20px;
+}
+
+.icon-search-2 {
+    font-size: 15px;
+    margin-right: 5px;
 }
 
 .td-right {
