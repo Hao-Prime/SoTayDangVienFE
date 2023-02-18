@@ -1,0 +1,42 @@
+import { Box, styled } from '@mui/material';
+import logo from '../assets/images/logo.png';
+import useSettings from 'app/hooks/useSettings';
+import { Span } from './Typography';
+import { Icon } from '@mui/material';
+const BrandRoot = styled(Box)(() => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '20px 5px 20px 25px',
+}));
+
+const StyledSpan = styled(Span)(({ mode }) => ({
+  fontSize: 17,
+  marginLeft: '.5rem',
+  fontWeight: "bold",
+  display: mode === 'compact' ? 'none' : 'block',
+}));
+
+const Brand = ({ children }) => {
+  const { settings } = useSettings();
+  const leftSidebar = settings.layout1Settings.leftSidebar;
+  const { mode } = leftSidebar;
+
+  return (
+    <BrandRoot>
+      <Box display="flex" alignItems="center">
+        <img src={logo} width="33" />
+        <StyledSpan mode={mode} className="sidenavHoverShow">
+          HỒ SƠ ĐẢNG VỤ
+
+        </StyledSpan>
+      </Box>
+
+      <Box className="sidenavHoverShow" sx={{ display: mode === 'compact' ? 'none' : 'block' }}>
+        {children || null}
+      </Box>
+    </BrandRoot>
+  );
+};
+
+export default Brand;

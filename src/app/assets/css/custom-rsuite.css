@@ -1,0 +1,244 @@
+/* width */
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.723);
+    border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f1f1f1c8;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
+::-webkit-scrollbar-track:hover .card-body-phantrang {
+    background: #0349fb;
+}
+
+/* firefox*/
+
+.sidebar * {
+    scrollbar-color: #00000000 transparent !important;
+}
+
+.sidebar {
+    scrollbar-color: #00000000 transparent !important;
+
+}
+
+* {
+    scrollbar-width: none !important;
+}
+
+body {
+    overflow: hidden;
+}
+
+.rs-table-body-row-wrapper {
+    overflow: scroll !important;
+    overscroll-behavior-y: none;
+
+
+}
+
+.table {
+    margin-top: 5px;
+}
+
+/* width */
+.table ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+/* Track */
+.table ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.723);
+    border-radius: 0px;
+}
+
+/* Handle */
+.table ::-webkit-scrollbar-thumb {
+    background: rgba(120, 120, 120, 0.786);
+    border-radius: 0px;
+}
+
+/* Handle on hover */
+.table ::-webkit-scrollbar-thumb:hover {
+    background: #838589;
+}
+
+.table ::-webkit-scrollbar-track:hover .card-body-phantrang {
+    background: #0349fb;
+}
+
+/* firefox*/
+
+.table .sidebar * {
+    scrollbar-color: #00000000 transparent !important;
+}
+
+.table .sidebar {
+    scrollbar-color: #00000000 transparent !important;
+
+}
+
+.table * {
+    scrollbar-width: none !important;
+}
+
+.div-flex {
+    display: flex;
+    align-items: center;
+}
+
+.div-flex-start {
+    display: flex;
+    align-items: flex-start;
+}
+
+.MuiInputBase-input {
+    padding: 7.5px 14px;
+}
+
+.MuiTextField-root {
+    margin-bottom: 14px;
+}
+
+.form-login .MuiInputLabel-root {
+    top: 0px !important;
+}
+
+.MuiInputLabel-root {
+    top: -5px;
+}
+
+.MuiInputLabel-shrink {
+    top: 2px;
+}
+
+.MuiOutlinedInput-input {
+    padding: 7.5px 14px;
+}
+
+.MuiAutocomplete-root .MuiOutlinedInput-root {
+    padding: 4px;
+}
+
+.text-eror {
+    color: red;
+    margin-right: 15px;
+}
+
+.css-1fh410u-MuiGrid-root>.MuiGrid-item {
+    padding-top: 82px;
+}
+
+.rs-modal-wrapper {
+    background: #535353e0;
+}
+
+.css-15v22id-MuiAccordionDetails-root {
+    padding: 0px 16px 16px;
+}
+
+.MuiAccordionSummary-root.Mui-expanded {
+    min-height: 43px;
+}
+
+p {
+    margin: 0px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+.rs-table-scrollbar-horizontal {
+    background: #f9f9f9;
+}
+
+.rs-table-scrollbar-horizontal .rs-table-scrollbar-handle {
+    background: #e2e2e2;
+}
+
+.css-wqyqkm-MuiGrid-root {
+    margin-bottom: 0px;
+}
+
+.rs-uploader {
+    margin-bottom: 15px;
+}
+
+.MuiInputLabel-root.Mui-focused {
+    color: unset;
+}
+
+.MuiOutlinedInput-input:focus {
+    outline: 1px;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #1976d2;
+    border-width: 2px;
+}
+
+.rs-picker-date.rs-picker-cleanable.rs-picker-has-value .rs-picker-toggle,
+.rs-picker-daterange.rs-picker-cleanable.rs-picker-has-value .rs-picker-toggle {
+    padding-top: 10px;
+
+}
+
+.rs-table-scrollbar {
+    opacity: 1;
+}
+
+.rs-table-scrollbar-handle {
+    background-color: #cecece;
+}
+
+.rs-table-scrollbar-pressed.rs-table-scrollbar-vertical:hover,
+.rs-table-scrollbar-vertical:hover {
+    -webkit-transform-origin: unset;
+    transform-origin: unset;
+    -webkit-transform: unset;
+    transform: unset;
+}
+
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-y.ps--clicking {
+    /* background-color: #eee; */
+    opacity: 0;
+}
+
+.ps__thumb-y {
+    display: none;
+}
+
+.MuiOutlinedInput-root {
+    padding: 4px !important;
+}
+
+.rs-input-group.rs-input-group-inside .rs-input-group-addon {
+
+    padding: 8px 9px;
+}
+
+.rs-table-scrollbar-pressed .rs-table-scrollbar-handle {
+    background-color: #828282;
+}
