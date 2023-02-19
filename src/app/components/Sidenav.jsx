@@ -9,7 +9,7 @@ import Services from 'app/services';
 import { Input, InputGroup } from 'rsuite';
 import { Icon } from '@mui/material';
 const StyledScrollBar = styled(Scrollbar)(() => ({
-  paddingLeft: '1rem',
+  paddingLeft: '10px',
   paddingRight: '10px',
   position: 'relative',
 }));

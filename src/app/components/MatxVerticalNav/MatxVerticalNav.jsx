@@ -32,8 +32,8 @@ const ExtAndIntCommon = {
   },
   '& .icon': {
     fontSize: '18px',
-    paddingLeft: '16px',
-    paddingRight: '20px',
+    paddingLeft: '10px',
+    paddingRight: '14px',
     verticalAlign: 'middle',
   },
 };

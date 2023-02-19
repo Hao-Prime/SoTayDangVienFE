@@ -19,6 +19,7 @@ import HomeIcon from '@rsuite/icons/legacy/Home';
 import EditIcon from '@rsuite/icons/Edit';
 import FileDownloadIcon from '@rsuite/icons/FileDownload';
 import FileUploadIcon from '@rsuite/icons/FileUpload';
+import avatar from "app/assets/images/logouser.png"
 const Navbar = ({ active, onSelect, ...props }) => {
     return (
         <Nav {...props} activeKey={active} onSelect={onSelect} style={{ marginBottom: 9 }}>
@@ -26,6 +27,7 @@ const Navbar = ({ active, onSelect, ...props }) => {
                 Đảng viên
             </Nav.Item>
             <Nav.Item eventKey="news">Cấp ủy</Nav.Item>
+            <Nav.Item eventKey="solution">Quần chúng ưu tú</Nav.Item>
             <Nav.Item eventKey="solutions">Yêu cầu chuyển tới</Nav.Item>
         </Nav>
     );
@@ -318,7 +320,7 @@ const CoCauToChucTable = () => {
                     <div className='cctc-simplesard cctc-ttc' style={{ height: "525px" }}>
                         <p className='padb-2'><b>Thông tin chung</b></p>
                         <div style={{ textAlign: "center" }}>
-                            <img className='img-ttc' src="https://stdv.vnpt.vn/static/quochuy.c4c9794c.png" />
+                            <img className='img-ttc' src={avatar} />
                             <p ><b>Đảng bộ Viễn Thông Long An</b><br /><br /></p>
                         </div>
                         <p className='gray01' style={{ paddingBottom: "45px" }}> Loại cơ sở Đảng: Đảng bộ<br />
@@ -375,19 +377,7 @@ const CoCauToChucTable = () => {
                 </Stack>
 
                 <Table virtualized height={450} data={listDangVien} id="table" className='table' loading={loading} headerHeight={38} rowHeight={38} shouldUpdateScroll={false}>
-                    <Column width={40} align="center">
-                        <CustomHeaderCellCheck>
-                            <div >
-                                <Checkbox
-                                    inline
-                                    checked={checked}
-                                    indeterminate={indeterminate}
-                                    onChange={handleCheckAll}
-                                />
-                            </div>
-                        </CustomHeaderCellCheck>
-                        <CheckCell dataKey="id" checkedKeys={checkedKeys} onChange={handleCheck} />
-                    </Column>
+
                     <Column width={45} align="center" >
                         <CustomHeaderCell>STT</CustomHeaderCell>
                         <CustomCell>{(rowData, rowIndex) => (limit * (page - 1) + (rowIndex + 1))}</CustomCell>

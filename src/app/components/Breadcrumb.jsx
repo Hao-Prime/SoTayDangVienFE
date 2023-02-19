@@ -77,7 +77,7 @@ const Breadcrumb = ({ routeSegments }) => {
                                 <span className='black-05 pointer'>
                                     {"Đảng bộ tỉnh Long An / Đảng ủy Khối cơ quan và doanh nghiệp tỉnh Long An / "}
                                 </span>
-                                <span className='black bold pointer'>
+                                <span className='red09 bold pointer'>
                                     {"Đảng bộ Viễn Thông Long An"}
                                 </span>
                             </SubName>
@@ -96,7 +96,7 @@ const Breadcrumb = ({ routeSegments }) => {
                         <span className='black-05 pointer'>
                             {" Đảng bộ tỉnh Long An / Đảng ủy Khối cơ quan và doanh nghiệp tỉnh Long An / "}
                         </span>
-                        <span className='black bold pointer'>
+                        <span className=' bold pointer red'>
                             {"Đảng bộ Viễn Thông Long An"}
                         </span>
                         <Table virtualized height={350} wordWrap="break-word" data={listData} id="table-hd" className='table table-pointer' loading={false} bordered={true} cellBordered={true} rowHeight={35} headerHeight={60} shouldUpdateScroll={false}>

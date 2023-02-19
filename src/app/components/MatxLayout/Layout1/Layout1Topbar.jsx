@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { Span } from '../../../components/Typography';
 import NotificationBar from '../../NotificationBar/NotificationBar';
 import ShoppingCart from '../../ShoppingCart';
-import avatar from "../../../assets/images/dang_uy_2.jpg"
+import avatar from "../../../assets/images/logouser.png"
 import DoiMatKhauModal from './DoiMatKhauModal';
 const StyledIconButton = styled(IconButton)(({ theme }) => ({
     color: theme.palette.text.primary,

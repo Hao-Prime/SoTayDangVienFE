@@ -1,3 +1,14 @@
+.form-cus .rs-picker-toggle.rs-btn {
+    height: 36px;
+}
+
+.form-cus-36 .rs-picker-toggle.rs-btn {
+    padding-top: 4px;
+    height: 30px;
+}
+
+
+
 /* width */
 ::-webkit-scrollbar {
     width: 9px;
@@ -196,7 +207,7 @@ p {
 
 .rs-picker-date.rs-picker-cleanable.rs-picker-has-value .rs-picker-toggle,
 .rs-picker-daterange.rs-picker-cleanable.rs-picker-has-value .rs-picker-toggle {
-    padding-top: 10px;
+    /* padding-top: 10px; */
 
 }
 

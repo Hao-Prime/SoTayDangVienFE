@@ -17,6 +17,22 @@ import ThongKe5Page from './views/thongke/tonghop/ThongKe5Page';
 import ThongKe6Page from './views/thongke/tonghop/ThongKe6Page';
 import ThongKe7Page from './views/thongke/tonghop/ThongKe7Page';
 import CoCauToChucTable from './views/cocautochuc/CoCauToChucTable';
+import SinhHoatCapUyTable from './views/congtacdang/shinhhoatcapuy/SinhHoatCapUyTable';
+import SinhHoatThuongKyTable from './views/congtacdang/sinhhoatthuongky/SinhHoatThuongKyTable';
+import Buoc0Table from './views/congtacdang/sinhhoatthuongky/Buoc0Table';
+import Buoc1Table from './views/congtacdang/sinhhoatthuongky/Buoc1Table';
+import Buoc2Table from './views/congtacdang/sinhhoatthuongky/Buoc2Table';
+import Buoc31Table from './views/congtacdang/sinhhoatthuongky/Buoc31Table';
+import Buoc32Table from './views/congtacdang/sinhhoatthuongky/Buoc32Table';
+import Buoc33Table from './views/congtacdang/sinhhoatthuongky/Buoc33Table';
+import Buoc34Table from './views/congtacdang/sinhhoatthuongky/Buoc34Table';
+import Buoc35Table from './views/congtacdang/sinhhoatthuongky/Buoc35Table';
+import Buoc36Table from './views/congtacdang/sinhhoatthuongky/Buoc36Table';
+import Buoc4Table from './views/congtacdang/sinhhoatthuongky/Buoc4Table';
+import Buoc5Table from './views/congtacdang/sinhhoatthuongky/Buoc5Table';
+import SinhHoatChuyenDeTable from './views/congtacdang/sinhhoatchuyende/SinhHoatChuyenDeTable';
+import NhiemVuCuaToiTable from './views/congtacdang/nhiemvucuatoi/NhiemVuCuaToiTable';
+import TongHopNhiemVuTable from './views/congtacdang/tonghopnhiemvu/TongHopNhiemVuTable';
 
 const BaoCaoKetQuaDanhGiaTable = Loadable(lazy(() => import('./views/thongke/dangvien/baocaoketquadanhgia/BaoCaoKetQuaDanhGiaTable')));
 const DangVienXuatSacTable = Loadable(lazy(() => import('./views/thongke/dangvien/theodoidangvienxuatsac/DangVienXuatSacTable')));
@@ -55,8 +71,25 @@ const routes = [
       { path: '/quanly/thongke/tonghop/thongke6', element: <ThongKe6Page /> },
       { path: '/quanly/thongke/tonghop/thongke7', element: <ThongKe7Page /> },
 
-
       { path: '/quanly/cocautochuc', element: <CoCauToChucTable /> },
+      { path: '/quanly/congtacdamg/shcapuy', element: <SinhHoatCapUyTable /> },
+      { path: '/quanly/congtacdamg/shthuongky', element: <SinhHoatThuongKyTable /> },
+      { path: '/quanly/congtacdamg/shthuongky/chitiet', element: <Buoc0Table /> },
+      { path: '/quanly/congtacdamg/shthuongky/buoc1', element: <Buoc1Table /> },
+      { path: '/quanly/congtacdamg/shthuongky/buoc2', element: <Buoc2Table /> },
+
+      { path: '/quanly/congtacdamg/shthuongky/buoc31', element: <Buoc31Table /> },
+      { path: '/quanly/congtacdamg/shthuongky/buoc32', element: <Buoc32Table /> },
+      { path: '/quanly/congtacdamg/shthuongky/buoc33', element: <Buoc33Table /> },
+      { path: '/quanly/congtacdamg/shthuongky/buoc34', element: <Buoc34Table /> },
+      { path: '/quanly/congtacdamg/shthuongky/buoc35', element: <Buoc35Table /> },
+      { path: '/quanly/congtacdamg/shthuongky/buoc36', element: <Buoc36Table /> },
+      { path: '/quanly/congtacdamg/shthuongky/buoc4', element: <Buoc4Table /> },
+      { path: '/quanly/congtacdamg/shthuongky/buoc5', element: <Buoc5Table /> },
+
+      { path: '/quanly/congtacdamg/shchuyende', element: <SinhHoatChuyenDeTable /> },
+      { path: '/quanly/congtacdamg/nvcuatoi', element: <NhiemVuCuaToiTable /> },
+      { path: '/quanly/congtacdamg/tonghopnhiemvu', element: <TongHopNhiemVuTable /> },
 
       ...dashboardRoutes,
       // ...chartsRoute, 

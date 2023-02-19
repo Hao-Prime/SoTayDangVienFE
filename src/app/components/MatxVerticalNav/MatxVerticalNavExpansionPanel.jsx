@@ -21,8 +21,8 @@ const BaseButton = styled(ButtonBase)(({ theme }) => ({
   '& .icon': {
     width: 36,
     fontSize: '18px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
+    paddingLeft: '10px',
+    paddingRight: '10px',
     verticalAlign: 'middle',
   },
 }));
@@ -58,7 +58,7 @@ const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
   const { pathname } = useLocation();
   const { name, icon, iconText, badge } = item;
   const NavExpandRoot = styled('div')(({ theme }) => ({
-    background: !collapsed ? '#9e0000cf' : "unset",
+    background: !collapsed ? '#9b01016e' : "unset",
     borderRadius: "8px",
 
     '& .expandIcon': {
