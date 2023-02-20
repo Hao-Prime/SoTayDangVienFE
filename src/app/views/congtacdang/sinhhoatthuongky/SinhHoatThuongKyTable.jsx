@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Icon } from '@mui/material';
+import { Icon, Grid } from '@mui/material';
 import { Breadcrumb, SimpleCard } from 'app/components';
 import { Popover, Whisper, Checkbox, Dropdown, IconButton, Progress, Pagination, Input, InputGroup, Button, Stack, SelectPicker } from 'rsuite';
 import MoreIcon from '@rsuite/icons/legacy/More';
@@ -8,7 +8,7 @@ import Services from 'app/services';
 import dangVienUtil from 'app/utils/modules/DangVien';
 import FormatDate from 'app/common/FormatDate';
 import { Paragraph } from 'app/components/Typography';
-import { Nav } from 'rsuite';
+import { Nav, Modal } from 'rsuite';
 import { Table, CustomCell, CustomHeaderCell2, Column, Container, ColumnGroup } from 'app/components/TableRsuite/TableCustomRsuite';
 
 const Navbar = ({ active, onSelect, ...props }) => {
@@ -33,7 +33,7 @@ export default function SinhHoatThuongKyTable() {
 
 
     ]);
-    const data = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'].map(
+    const data = ['Tháng 3 Năm 2023', 'Tháng 4 Năm 2023', 'Tháng 5 Năm 2023', 'Tháng 6 Năm 2023', 'Tháng 7 Năm 2023', 'Tháng 8 Năm 2023', 'Tháng 9 Năm 2023', 'Tháng 10 Năm 2023', 'Tháng 11 Năm 2023', 'Tháng 12 Năm 2023'].map(
         item => ({ label: item, value: item })
     );
     const data2 = ['Năm 2023', 'Năm 2022', 'Năm 2021'].map(
@@ -76,8 +76,8 @@ export default function SinhHoatThuongKyTable() {
     };
 
     const handleThemDangVien = () => {
-        setDangVienUp(dangVienUtil.getDangVienThem())
-        // setOpenDangVienModal(true)
+        // setDangVienUp(dangVienUtil.getDangVienThem())
+        setOpenDangVienModal(true)
     };
 
     const ActionCell = ({ rowData, dataKey, ...props }) => {
@@ -153,7 +153,26 @@ export default function SinhHoatThuongKyTable() {
             <DanhGiaModal listDangVien={listDangVienSelect} namXepLoai={namXepLoai} open={openDanhGiaModal} setOpen={setOpenDanhGiaModal} reloadList={reloadList} />
             <ChiTietDangVienModal dangVienID={dangVienUp.id} open={openChiTietDangVienModal} setOpen={setOpenChiTietDangVienModal} /> */}
             <Breadcrumb routeSegments={[{ name: "Sinh hoạt thường kỳ", path: "/par/dangvien" }]} />
-
+            <Modal size="xs" backdrop="static" keyboard={false} open={openDangVienModal} onClose={() => setOpenDangVienModal(!openDangVienModal)} className="cus-modal">
+                <Modal.Header>
+                    <Modal.Title><b>Thêm mới</b></Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Grid container spacing={0} className="form-cus">
+                        <Grid item lg={12} md={12} sm={12} xs={12} sx={{ m: 2 }}>
+                            <SelectPicker size="sm" data={data} className='input-formx' placeholder="Tháng 3 Năm 2023" cleanable={false} />
+                        </Grid>
+                    </Grid>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button appearance="primary">
+                        Thêm mới
+                    </Button>
+                    <Button onClick={() => setOpenDangVienModal(!openDangVienModal)} appearance="default">
+                        Thoát
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <SimpleCard >
                 {/* <div className='form-table'> */}
                 <Navbar appearance="tabs" active={active} onSelect={setActive} />

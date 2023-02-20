@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Icon, Grid, Divider } from '@mui/material';
 import { Breadcrumb, SimpleCard } from 'app/components';
 import { Popover, DatePicker, TagPicker, Whisper, Checkbox, Dropdown, IconButton, Progress, Pagination, Input, InputGroup, Button, Stack, SelectPicker } from 'rsuite';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from "react-router-dom";
 import SunEditor, { buttonList } from "suneditor-react";
 import MoreIcon from '@rsuite/icons/legacy/More';
 import 'suneditor/dist/css/suneditor.min.css';
@@ -23,6 +23,7 @@ export default function Buoc31Table() {
     const [listDangVien, setListDangVien] = useState(['Huỳnh Chí Tường', 'Trần Hoàng Sơn', 'Huỳnh Quang Cường', "Nguyễn Thanh Khiêm", 'Nguyễn Minh Triết', 'Vũ Quang Huy', 'Nguyễn Phát Tài'].map(
         item => ({ value1: item })
     ));
+    const navigate = useNavigate();
     const [limit, setLimit] = useState(30);
     const [page, setPage] = useState(1);
     const data2 = ['Tất cả kiến nghị', 'Kiến nghị của tôi'].map(
@@ -84,12 +85,12 @@ export default function Buoc31Table() {
                 <Divider />
                 <br />
                 <Steps current={0} className="pointer">
-                    <Steps.Item title="Điểm danh" icon={<PencilSquareIcon style={{ fontSize: 20 }} />} />
-                    <Steps.Item title="Diễn biến cuộc họp" icon={<ConversionIcon style={{ fontSize: 20 }} />} />
-                    <Steps.Item title="Biên bản cuộc họp" icon={<BookIcon style={{ fontSize: 20 }} />} />
-                    <Steps.Item title="Giao nhiệm vụ" icon={<ListIcon style={{ fontSize: 20 }} />} />
-                    <Steps.Item title="Chấm điểm" icon={<TaskIcon style={{ fontSize: 20 }} />} />
-                    <Steps.Item title="Tổng kết" icon={<SpeakerIcon style={{ fontSize: 20 }} />} />
+                    <Steps.Item title="Điểm danh" onClick={() => navigate("/quanly/congtacdamg/shthuongky/buoc31")} icon={<PencilSquareIcon style={{ fontSize: 20 }} />} />
+                    <Steps.Item title="Diễn biến cuộc họp" onClick={() => navigate("/quanly/congtacdamg/shthuongky/buoc32")} icon={<ConversionIcon style={{ fontSize: 20 }} />} />
+                    <Steps.Item title="Biên bản cuộc họp" onClick={() => navigate("/quanly/congtacdamg/shthuongky/buoc33")} icon={<BookIcon style={{ fontSize: 20 }} />} />
+                    <Steps.Item title="Giao nhiệm vụ" onClick={() => navigate("/quanly/congtacdamg/shthuongky/buoc34")} icon={<ListIcon style={{ fontSize: 20 }} />} />
+                    <Steps.Item title="Chấm điểm" onClick={() => navigate("/quanly/congtacdamg/shthuongky/buoc35")} icon={<TaskIcon style={{ fontSize: 20 }} />} />
+                    <Steps.Item title="Tổng kết" onClick={() => navigate("/quanly/congtacdamg/shthuongky/buoc36")} icon={<SpeakerIcon style={{ fontSize: 20 }} />} />
                 </Steps>
 
 

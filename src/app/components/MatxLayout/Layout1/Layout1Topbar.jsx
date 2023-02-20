@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Avatar, Hidden, Icon, IconButton, MenuItem, useMediaQuery } from '@mui/material';
+import { SelectPicker } from 'rsuite'
 import { Box, styled, useTheme } from '@mui/system';
 import { MatxMenu, MatxSearchBox } from 'app/components';
 import { themeShadows } from 'app/components/MatxTheme/themeColors';
@@ -126,7 +127,11 @@ const Layout1Topbar = () => {
                     </Box>
 
                     <Box display="flex" alignItems="center">
-                        <MatxSearchBox />
+                        {/* <MatxSearchBox /> */}
+
+                        <Icon className='red-001 me-1'>assignment_ind</Icon>
+                        <SelectPicker className='red-quyen' data={[{ value: 1, label: "Bí thư - Chi bộ III - Khối văn phòng" }, { value: 2, label: "Đảng ủy viên - Đảng bộ Viễn Thông Long An" }]} searchable={false} cleanable={false} appearance="subtle" defaultValue={1} placeholder="Bí thư - Chi bộ III - Khối văn phòng" style={{ width: "auto" }} />
+
 
                         <NotificationProvider>
                             <NotificationBar />
@@ -139,7 +144,7 @@ const Layout1Topbar = () => {
                                 <UserMenu>
                                     <Hidden xsDown>
                                         <Span>
-                                            Chào <strong>{user.hoTen}</strong>
+                                            <strong>{user.hoTen}</strong>
                                         </Span>
                                     </Hidden>
                                     <Avatar src={avatar} sx={{ cursor: 'pointer' }} />

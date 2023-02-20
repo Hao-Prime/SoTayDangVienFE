@@ -1,6 +1,8 @@
 export const navigations = [
-    { name: 'Dashboard', path: '/dashboard/default', icon: 'dashboard' },
-    { label: 'QUẢN LÝ', type: 'label' },
+    { name: 'Trang chủ', path: '/dashboard/default', icon: 'dashboard' },
+    { name: 'Lịch công tác', path: '/dashboard/default1', icon: 'event_available' },
+    { name: 'Tin tức', path: '/dashboard/default2', icon: 'featured_play_list' },
+    // { label: 'QUẢN LÝ', type: 'label' },
     {
         name: 'Công tác Đảng',
         icon: 'work_history',
@@ -12,6 +14,22 @@ export const navigations = [
             { name: 'Tổng hợp nhiệm vụ', iconText: 'HT', path: '/quanly/congtacdamg/tonghopnhiemvu' },
         ],
     },
+    { name: 'Thông báo', path: '/dashboard/default3', icon: 'volume_down' },
+    { name: 'Học tập nghị quyết', path: '/dashboard/default4', icon: 'account_balance_wallet' },
+    { name: 'Bản tin thông báo nội bộ', path: '/dashboard/default5', icon: 'local_play' },
+    { name: 'Văn kiên - Tự liệu', path: '/dashboard/default6', icon: 'folder_open' },
+    { name: 'Văn bản mới', path: '/dashboard/default7', icon: 'library_books' },
+    { name: 'Lưu trữ yêu thích', path: '/dashboard/default8', icon: 'star_border' },
+    {
+        name: 'Gửi nhận văn bản',
+        icon: 'present_to_all',
+        children: [
+            { name: 'Gửi văn bản', iconText: 'TC', path: '/quanly/vanban/tatca' },
+            { name: 'Nhân văn bản', iconText: 'XL', path: '/quanly/vanban/daxuly?loai=2' }
+        ],
+    },
+    { name: 'Cơ cấu tổ chức', icon: 'account_balance', path: '/quanly/cocautochuc', },
+    { name: 'Xếp hạng', path: '/dashboard/default10', icon: 'rate_review' },
     {
         name: 'Văn bản',
         icon: 'file_present',
@@ -35,33 +53,30 @@ export const navigations = [
 
         ],
     },
-    {
-        name: 'Cơ cấu tổ chức',
-        icon: 'local_police',
-        path: '/quanly/cocautochuc',
-    },
-    {
 
-        name: 'Đảng viên',
-        icon: 'badge',
-        path: '/quanly/dangvien',
-    },
+    // {
 
-    {
-        name: 'Chi bộ',
-        icon: 'local_police',
-        path: '/quanly/chibo',
-    },
-    {
-        name: 'Quần chúng ưu tú',
-        icon: 'groups2',
-        path: '/quanly/quanchunguutu',
-    },
-    {
-        name: 'Đảng phí',
-        icon: 'attach_money',
-        path: 'http://demos.ui-lib.com/matx-react-doc/',
-    },
+    //     name: 'Đảng viên',
+    //     icon: 'badge',
+    //     path: '/quanly/dangvien',
+    // },
+
+    // {
+    //     name: 'Chi bộ',
+    //     icon: 'local_police',
+    //     path: '/quanly/chibo',
+    // },
+    // {
+    //     name: 'Quần chúng ưu tú',
+    //     icon: 'groups2',
+    //     path: '/quanly/quanchunguutu',
+    // },
+    // {
+    //     name: 'Đảng phí',
+    //     icon: 'attach_money',
+    //     path: 'http://demos.ui-lib.com/matx-react-doc/',
+    // },
+
     { label: 'THỐNG KÊ', type: 'label' },
     // {
     //   name: 'Thống kê đảng viên',
@@ -84,7 +99,7 @@ export const navigations = [
     },
     {
         name: 'Thống kê chi bộ',
-        icon: 'equalizer',
+        icon: 'timeline',
         path: '/material/table',
         children: [
             { name: 'Phân loại đảng viên', iconText: 'TC', path: '/quanly/thongke/chibo/dangvien' },
@@ -93,10 +108,20 @@ export const navigations = [
 
     },
     {
-        name: 'Thống kê tổng hợp',
-        icon: 'equalizer',
+        name: 'Thống kê công tác Đảng',
+        icon: 'assignment',
         path: '/material/table',
         children: [
+            { name: 'Học tập nghị quyết', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke1' },
+            { name: 'Sinh hoạt đảng', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke1' },
+        ],
+    },
+    {
+        name: 'Thống kê tổng hợp',
+        icon: 'assessment',
+        path: '/material/table',
+        children: [
+
             { name: '1. Tăng giảm Đảng viên', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke1' },
             { name: '2. Đảng viên mới kết nạp', iconText: 'XL', path: '/quanly/thongke/tonghop/thongke2' },
             { name: '3. Đảng viên theo dân tộc', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke3' },
@@ -104,6 +129,7 @@ export const navigations = [
             { name: '5. Tổ chức Đảng, Đảng viên', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke5' },
             { name: '6. Xếp loại Cơ sở Đảng', iconText: 'XL', path: '/quanly/thongke/tonghop/thongke6' },
             { name: '7. Xếp loại Đảng viên', iconText: 'XL', path: '/quanly/thongke/tonghop/thongke7' },
+
         ],
 
     },
@@ -111,15 +137,28 @@ export const navigations = [
 
     { label: 'HỆ THỐNG', type: 'label' },
     {
-        name: 'Lịch sử thao tác',
-        icon: 'settings_backup_restore',
-        path: '/quanly/lichsu',
+        name: 'Quản trị',
+        icon: 'settings_applications',
+        path: '/material/table',
+        children: [
+
+            { name: 'Ban biên tập', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke11' },
+            { name: 'Tin tức', iconText: 'XL', path: '/quanly/thongke/tonghop/thongke21' },
+            { name: 'Học tập nghị quyết', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke31' },
+            { name: 'Thông báo nội bộ', iconText: 'XL', path: '/quanly/thongke/tonghop/thongke41' },
+            { name: 'Hướng dẫn sử dụng', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke51' },
+            { name: 'Nhóm Đảng viên', iconText: 'XL', path: '/quanly/thongke/tonghop/thongke61' },
+            { name: 'Phân quyền', iconText: 'XL', path: '/quanly/thongke/tonghop/thongke71' },
+            { name: 'Nhật ký', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke111' },
+            { name: 'Cài đặt', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke1111' },
+        ],
+
     },
     { label: 'HƯỚNG DẪN', type: 'label' },
     {
         name: 'Tài liệu',
-        icon: 'launch',
-        type: 'extLink',
+        icon: 'insert_drive_file',
+        // type: 'extLink',
         path: 'https://drive.google.com/drive/folders/1xpjPaXrvQH_XODwcGnMiuWaHI6HwhSpY?usp=sharing',
     },
     { label: 'Trung tâm CNTT VNPT Long An', type: 'label' },

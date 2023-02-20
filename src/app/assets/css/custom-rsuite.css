@@ -113,6 +113,19 @@ body {
     align-items: center;
 }
 
+.item-sltruycap {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.div-flex-2 {
+    display: flex;
+    align-items: flex-start;
+}
+
+.hovergray:hover {
+    background-color: #ededed;
+}
+
 .div-flex-start {
     display: flex;
     align-items: flex-start;

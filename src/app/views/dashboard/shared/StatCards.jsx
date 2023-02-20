@@ -31,10 +31,26 @@ const Heading = styled('h6')(({ theme }) => ({
 const StatCards = () => {
     const [cardList, setCardList] = useState(
         [
-            { name: 'Số lượng Chi bộ', amount: '16', icon: 'local_police', link: "/quanly/chibo" },
-            { name: 'Số lượng Đảng viên', amount: 198, icon: 'badge', link: "/quanly/dangvien" },
-            { name: 'Văn bản cần xử lý', amount: '12', icon: 'file_present', link: "/quanly/vanban/dangxuly?loai=1" },
-            { name: 'Công việc cần thực hiện', amount: '7', icon: 'work_history', link: "/quanly/congviec/dangxuly?loai=1" },
+            {
+                name: 'Số lượng Đảng bộ/Chi bộ', amount: '16', icon: 'local_police', link: "/quanly/chibo",
+                type: 2, name2: "Tổng cộng", name3: "Số Đảng bộ: ", name4: "Số Chi bộ: ",
+                amount3: 0, amount4: 16
+            },
+            {
+                name: 'Số lượng Đảng viên trong đơn vị', amount: 198, icon: 'badge', link: "/quanly/dangvien",
+                type: 2, name2: "", name3: "Đảng viên cấp ủy: ", name4: "Đảng viên dự bị: ",
+                amount3: 22, amount4: 10
+            },
+            {
+                name: 'Thông tin nhiệm vụ', amount: '12', icon: 'file_present', link: "/quanly/vanban/dangxuly?loai=1",
+                type: 2, name2: "Tổng số nhiệm vụ", name3: "Số nhiệm vụ đúng hạn: ", name4: "Số nhiệm vụ trễ hạn: ",
+                amount3: 0, amount4: 0
+            },
+            {
+                name: 'Học tập nghị quyết', amount: '7', icon: 'work_history', link: "/quanly/congviec/dangxuly?loai=1",
+                type: 2, name2: "Số câu hỏi / ý kiến", name3: "Số câu đã trả lời: ", name4: "Số câu chưa trả lời: ",
+                amount3: 0, amount4: 0
+            },
         ]);
 
     var isMounted = true;
@@ -64,7 +80,12 @@ const StatCards = () => {
                             <Icon className="icon">{item.icon}</Icon>
                             <Box ml="12px">
                                 <Small>{item.name}</Small>
-                                <Heading>{item.amount}</Heading>
+                                <div className='div-flex m-2'><p className='span-sl-db me-2'>{item.amount}</p> <span className='gray01'>{item.name2}</span></div>
+                                {item.type == 2 && <>
+                                    <p><span className="ant-badge-status-dot ant-badge-status-blue me-2"></span>{item.name3 + item.amount3}</p>
+                                    <p><span className="ant-badge-status-dot ant-badge-status-red me-2"></span>{item.name4 + item.amount4}</p>
+                                </>
+                                }
                             </Box>
                         </ContentBox>
 

@@ -5,11 +5,10 @@ import { Table, CustomCell, CustomHeaderCell2, Column, Container, ColumnGroup } 
 import MoreIcon from '@rsuite/icons/legacy/More';
 
 
-export default function FileTable({ }) {
+export default function File2Table({ }) {
     const [windowScreen, setWindowScreen] = useState(window.screen.width > 1000);
     const [listFile, setlistFile] = useState([
-        { "value1": 1, value1: "Tài liệu", value2: "DT", },
-        { "value1": 1, value1: "Tài liệu", value2: "ST", }
+
     ]);
     const [limit, setLimit] = useState(30);
     const [page, setPage] = useState(1);
@@ -58,7 +57,7 @@ export default function FileTable({ }) {
             <Button color="red" appearance="primary" className='div-flex' size="xs">
                 <Icon className="icon icon-search">add</Icon> Thêm mới
             </Button>
-            <Table autoHeight={true} data={listFile} id="table" className='table' loading={false} bordered={true} headerHeight={38} rowHeight={38} shouldUpdateScroll={false}>
+            <Table data={listFile} id="table" className='table' loading={false} bordered={true} headerHeight={38} rowHeight={38} shouldUpdateScroll={false}>
 
                 <Column width={45} align="center" verticalAlign="middle">
                     <CustomHeaderCell2>STT</CustomHeaderCell2>

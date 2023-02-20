@@ -17,8 +17,10 @@ import ListIcon from '@rsuite/icons/List';
 import TaskIcon from '@rsuite/icons/Task';
 import SpeakerIcon from '@rsuite/icons/Speaker';
 import { Radio, RadioGroup, Form } from 'rsuite';
+import NhiemVuModal from './NhiemVuModal';
 export default function Buoc5Table() {
     const [windowScreen, setWindowScreen] = useState(window.screen.width > 1000);
+    const [openDangVienModal, setOpenDangVienModal] = useState(false);
     const [loading, setLoading] = useState(false);
     const [listDangVien, setListDangVien] = useState([
         { value0: 1, value1: "Huỳnh Quang Cường", value2: "Tiếp tục chuyển đổi hóa đơn điện tử theo TT78" },
@@ -71,6 +73,7 @@ export default function Buoc5Table() {
     };
     return (
         <Container>
+            <NhiemVuModal open={openDangVienModal} setOpen={setOpenDangVienModal}></NhiemVuModal>
             <Breadcrumb routeSegments={[{ name: "Sinh hoạt thường kỳ", path: "/par/dangvien" }]} />
             <SimpleCard >
                 <Stack wrap className="table-toolbar" justifyContent="space-between">
@@ -94,7 +97,7 @@ export default function Buoc5Table() {
                                 <Stack wrap className="table-toolbar" justifyContent="space-between">
                                     <Stack wrap spacing={6}>
                                         <Stack wrap spacing={6}>
-                                            <Button appearance="primary" className='div-flex bor-ra-3' size="md" >
+                                            <Button appearance="primary" className='div-flex bor-ra-3' size="md" onClick={() => setOpenDangVienModal(true)}>
                                                 <Icon className="icon icon-search">add</Icon> Thêm mới
                                             </Button>
 
@@ -105,7 +108,7 @@ export default function Buoc5Table() {
 
                                     <Stack spacing={6}>
                                         <Paragraph className='td-right'>Tổng số:</Paragraph>
-                                        <Paragraph className='red border-input'><b>1</b></Paragraph>
+                                        <Paragraph className='red border-input'><b>2</b></Paragraph>
                                     </Stack>
                                 </Stack>
                                 <div>
@@ -175,17 +178,13 @@ export default function Buoc5Table() {
                                     </div>
                                 </div>
                                 <div className='displayflexcenter pt-4'>
-                                    <NavLink to="/quanly/congtacdamg/shthuongky/buoc36" >
+                                    <NavLink to="/quanly/congtacdamg/shthuongky/buoc4" >
                                         <Button className='div-flex bor-ra-3 w-110' size="md" >
                                             <Icon className="icon icon-search pointer ">arrow_back</Icon> Quay về
                                         </Button>
                                     </NavLink>
 
-                                    <NavLink to="/quanly/congtacdamg/shthuongky/buoc5" >
-                                        <Button className='div-flex bor-ra-3 w-110' size="md" >
-                                            <Icon className="icon icon-search pointer ">arrow_forward</Icon> Tiếp tục
-                                        </Button>
-                                    </NavLink>
+
                                 </div>
                             </Grid>
                         </Grid>

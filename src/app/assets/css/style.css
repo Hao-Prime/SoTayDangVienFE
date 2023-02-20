@@ -19,6 +19,42 @@
     cursor: pointer;
 }
 
+.span-sl-db {
+    color: #fc3535;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.ant-badge-status-dot {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.red-quyen .rs-picker-toggle-value {
+    color: #727272 !important
+}
+
+.red-001 {
+    color: #ff6262;
+}
+
+.ant-badge-status-blue {
+    background: #1890ff;
+}
+
+.ant-badge-status-green {
+    background: #18ff27;
+}
+
+.ant-badge-status-red {
+    background: #ff1818;
+}
+
 .padl-1 {
     padding: 10px;
 }
@@ -104,6 +140,10 @@
     width: 100%
 }
 
+.input-formx .rs-picker-toggle.rs-btn {
+    height: 36px;
+}
+
 .t-center {
     text-align: center;
 }
@@ -113,6 +153,11 @@
     justify-content: space-between;
     max-width: 900px;
     min-width: 300px;
+    margin: 0px auto;
+}
+
+.div-form-2 {
+
     margin: 0px auto;
 }
 
@@ -379,7 +424,7 @@
 }
 
 .rs-picker-date .rs-picker-toggle.rs-btn {
-    height: 43px;
+    height: 36px;
     border: 1px solid #c4c4c4;
     border-radius: 4px;
 }
@@ -598,6 +643,10 @@
 
 .me-1 {
     margin-right: 0.25rem !important;
+}
+
+.me-2 {
+    margin-right: 0.5rem !important;
 }
 
 .me-1,

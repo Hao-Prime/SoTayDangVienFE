@@ -1,5 +1,5 @@
 import { Box, styled } from '@mui/material';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo-VNPT.png';
 import useSettings from 'app/hooks/useSettings';
 import { Span } from './Typography';
 import { Icon } from '@mui/material';
@@ -25,16 +25,16 @@ const Brand = ({ children }) => {
   return (
     <BrandRoot>
       <Box display="flex" alignItems="center">
-        <img src={logo} width="33" />
-        <StyledSpan mode={mode} className="sidenavHoverShow">
+        <img src={logo} width="27" />
+        <StyledSpan mode={mode} className="sidenavHoverShow ps-2">
           HỒ SƠ ĐẢNG VỤ
 
         </StyledSpan>
       </Box>
 
-      <Box className="sidenavHoverShow" sx={{ display: mode === 'compact' ? 'none' : 'block' }}>
+      {/* <Box className="sidenavHoverShow" sx={{ display: mode === 'compact' ? 'none' : 'block' }}>
         {children || null}
-      </Box>
+      </Box> */}
     </BrandRoot>
   );
 };

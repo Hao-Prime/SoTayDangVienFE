@@ -85,13 +85,13 @@ const NotificationBar = ({ container }) => {
   return (
     <Fragment>
       <IconButton onClick={handleDrawerToggle}>
-        <Badge color="secondary" badgeContent={0} sx={{
+        <Badge color="secondary" badgeContent={10} sx={{
           "& .MuiBadge-badge": {
             color: 'white',
             backgroundColor: 'red',
           }
         }}>
-          <Icon sx={{ color: textColor }}>notifications</Icon>
+          <Icon sx={{ color: textColor }} className="red-001">notifications_none</Icon>
         </Badge>
       </IconButton>
 
@@ -109,7 +109,7 @@ const NotificationBar = ({ container }) => {
         >
           <Box sx={{ width: sideNavWidth }}>
             <Notification>
-              <Icon color="primary">notifications</Icon>
+              <Icon className="red-001">notifications_none</Icon>
               <h5>Thông báo</h5>
             </Notification>
 

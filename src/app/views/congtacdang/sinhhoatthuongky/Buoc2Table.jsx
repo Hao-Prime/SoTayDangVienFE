@@ -1,18 +1,22 @@
 import { useEffect, useState } from 'react';
 import { Icon, Grid, Divider } from '@mui/material';
 import { Breadcrumb, SimpleCard } from 'app/components';
-import { Popover, DatePicker, TagPicker, Whisper, Checkbox, Dropdown, IconButton, Progress, Pagination, Input, InputGroup, Button, Stack, SelectPicker } from 'rsuite';
+import { Popover, DatePicker, TagPicker, Whisper, Checkbox, Dropdown, IconButton, Progress, Pagination, Input, InputGroup, Button, Stack, SelectPicker, Modal } from 'rsuite';
 import { NavLink } from 'react-router-dom';
 import SunEditor, { buttonList } from "suneditor-react";
 import MoreIcon from '@rsuite/icons/legacy/More';
 import 'suneditor/dist/css/suneditor.min.css';
 import FileTable from './FileTable';
+import { Radio, RadioGroup, Form } from 'rsuite';
 import { Table, CustomCell, CustomHeaderCell2, Column, Container, ColumnGroup } from 'app/components/TableRsuite/TableCustomRsuite';
 import { Paragraph } from 'app/components/Typography';
+import File2Table from './FileTable2';
+
 
 export default function Buoc2Table() {
     const [windowScreen, setWindowScreen] = useState(window.screen.width > 1000);
     const [loading, setLoading] = useState(false);
+    const [openDangVienModal, setOpenDangVienModal] = useState(false);
     const [listDangVien, setListDangVien] = useState([
         { value0: 0, value1: "Nguyễn Minh Triết", value2: "Hoàn thiện KH CĐS gửi lại UBND Cần Đước" },
         { value0: 1, value1: "Trần Hoàng Sơn", value2: "Khai trương và vận hành chính thức trung tâm điều hành" },
@@ -65,6 +69,37 @@ export default function Buoc2Table() {
     };
     return (
         <Container>
+            <Modal size="md" backdrop="static" keyboard={false} open={openDangVienModal} onClose={() => setOpenDangVienModal(!openDangVienModal)} className="cus-modal">
+                <Modal.Header>
+                    <Modal.Title><b>Thêm mới</b></Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body>
+
+                    <Grid container spacing={0} className="div-form-2">
+                        <Grid item lg={12} md={12} sm={12} xs={12} sx={{ m: 2 }}>
+                            <div>
+                                <p className='pb-2 pt-2'><span className='red'>* </span> Nội dung</p>
+                                <Input placeholder="" className='input-formx' as="textarea" />
+                            </div>
+                            <div>
+                                <p className='pb-2 pt-2'>Tệp đính kèm</p>
+                                <File2Table></File2Table>
+                            </div>
+
+
+                        </Grid>
+                    </Grid>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button appearance="primary">
+                        Thêm mới
+                    </Button>
+                    <Button onClick={() => setOpenDangVienModal(!openDangVienModal)} appearance="default">
+                        Thoát
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <Breadcrumb routeSegments={[{ name: "Sinh hoạt thường kỳ", path: "/par/dangvien" }]} />
             <SimpleCard >
                 <Stack wrap className="table-toolbar" justifyContent="space-between">
@@ -84,7 +119,7 @@ export default function Buoc2Table() {
                             <Grid item lg={12} md={12} sm={12} xs={12} >
                                 <Stack wrap className="table-toolbar" justifyContent="space-between">
                                     <Stack wrap spacing={6}>
-                                        <Button appearance="primary" className='div-flex bor-ra-3' size="md" >
+                                        <Button appearance="primary" className='div-flex bor-ra-3' size="md" onClick={() => setOpenDangVienModal(true)}>
                                             <Icon className="icon icon-search">add</Icon> Thêm mới
                                         </Button>
 

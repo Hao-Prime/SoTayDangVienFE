@@ -1,16 +1,18 @@
 import { Card, Grid, styled, useTheme } from '@mui/material';
 import FormatDate from 'app/common/FormatDate';
+import { Breadcrumb } from 'app/components';
 import { Fragment } from 'react';
 import Campaigns from './shared/Campaigns';
 import DoughnutChart from './shared/Doughnut';
 import RowCards from './shared/RowCards';
 import StatCards from './shared/StatCards';
 import StatCards2 from './shared/StatCards2';
+import ThongKeDangVienSuDung from './shared/ThongKeDangVienSuDung';
 import TopSellingTable from './shared/TopSellingTable';
 import UpgradeCard from './shared/UpgradeCard';
 
 const ContentBox = styled('div')(({ theme }) => ({
-  margin: '30px',
+  margin: '20px',
   [theme.breakpoints.down('sm')]: { margin: '16px' },
 }));
 
@@ -39,7 +41,9 @@ const Analytics = () => {
 
   return (
     <Fragment>
+
       <ContentBox className="analytics">
+        <Breadcrumb routeSegments={[{ name: "Trang chủ", path: "/par/dangvien" }]} />
         <Grid container spacing={3}>
           <Grid item lg={8} md={8} sm={12} xs={12}>
             <StatCards />
@@ -61,8 +65,10 @@ const Analytics = () => {
               />
             </Card>
 
-            {/* <UpgradeCard /> */}
             <Campaigns />
+          </Grid>
+          <Grid item lg={12} md={12} sm={12} xs={12}>
+            <ThongKeDangVienSuDung />
           </Grid>
         </Grid>
       </ContentBox>

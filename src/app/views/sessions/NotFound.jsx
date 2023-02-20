@@ -1,13 +1,13 @@
 import { Box, Button, styled } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-
+import logo from "../../assets/images/404page.png"
 const FlexBox = styled(Box)(() => ({
   display: 'flex',
   alignItems: 'center',
 }));
 
 const JustifyBox = styled(FlexBox)(() => ({
-  maxWidth: 320,
+  maxWidth: 700,
   flexDirection: 'column',
   justifyContent: 'center',
 }));
@@ -30,7 +30,7 @@ const NotFound = () => {
   return (
     <NotFoundRoot>
       <JustifyBox>
-        <IMG src="/assets/images/illustrations/404.svg" alt="" />
+        <IMG src={logo} alt="" />
 
         <Button
           color="primary"

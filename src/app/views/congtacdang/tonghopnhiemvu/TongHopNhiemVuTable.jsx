@@ -16,10 +16,11 @@ import ListIcon from '@rsuite/icons/List';
 import TaskIcon from '@rsuite/icons/Task';
 import SpeakerIcon from '@rsuite/icons/Speaker';
 import { Radio, RadioGroup, Form } from 'rsuite';
+import NhiemVuModal from '../sinhhoatthuongky/NhiemVuModal';
 
 
 export default function TongHopNhiemVuTable() {
-
+    const [openDangVienModal, setOpenDangVienModal] = useState(false);
     const [windowScreen, setWindowScreen] = useState(window.screen.width > 1000);
     const [loading, setLoading] = useState(false);
     const [listDangVien, setListDangVien] = useState([
@@ -76,7 +77,8 @@ export default function TongHopNhiemVuTable() {
     };
     return (
         <Container>
-            <Breadcrumb routeSegments={[{ name: "Nhiệm vụ của tôi", path: "/par/dangvien" }]} />
+            <NhiemVuModal open={openDangVienModal} setOpen={setOpenDangVienModal}></NhiemVuModal>
+            <Breadcrumb routeSegments={[{ name: "Tổng hợp nhiệm vụ", path: "/par/dangvien" }]} />
             <SimpleCard >
 
 
@@ -90,7 +92,7 @@ export default function TongHopNhiemVuTable() {
                                     <Stack wrap spacing={6}>
                                         <Stack wrap spacing={6}>
 
-                                            <Button appearance="primary" className='div-flex' size="sm">
+                                            <Button appearance="primary" className='div-flex' size="sm" onClick={() => setOpenDangVienModal(true)}>
                                                 <Icon className="icon icon-search">add</Icon> Thêm mới
                                             </Button>
                                             <SelectPicker size="sm" data={data} style={{ width: 220 }} placeholder="Tất cả nhiệm vụ" cleanable={false} />

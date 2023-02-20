@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Icon, Grid, Divider } from '@mui/material';
 import { Breadcrumb, SimpleCard } from 'app/components';
-import { Popover, DatePicker, TagPicker, Whisper, Checkbox, Dropdown, IconButton, Progress, Pagination, Input, InputGroup, Button, Stack, SelectPicker } from 'rsuite';
+import { Popover, Modal, DatePicker, TagPicker, Whisper, Checkbox, Dropdown, IconButton, Progress, Pagination, Input, InputGroup, Button, Stack, SelectPicker } from 'rsuite';
 import { NavLink } from 'react-router-dom';
 import SunEditor, { buttonList } from "suneditor-react";
 import MoreIcon from '@rsuite/icons/legacy/More';
@@ -17,9 +17,11 @@ import ListIcon from '@rsuite/icons/List';
 import TaskIcon from '@rsuite/icons/Task';
 import SpeakerIcon from '@rsuite/icons/Speaker';
 import { Radio, RadioGroup, Form } from 'rsuite';
+import File2Table from './FileTable2';
 export default function Buoc4Table() {
     const [windowScreen, setWindowScreen] = useState(window.screen.width > 1000);
     const [loading, setLoading] = useState(false);
+    const [openDangVienModal, setOpenDangVienModal] = useState(false);
     const [listDangVien, setListDangVien] = useState([
         { value0: 1, value1: "Hoàn thiện KH CĐS gửi lại UBND Cần Đước", value2: "225554", value3: "Còn 25 điểm chưa ký hợp đồng. Đã phát sóng 31/51 điểm CSHT mới dùng thiết bị vô tuyến reused " },
 
@@ -71,6 +73,68 @@ export default function Buoc4Table() {
     };
     return (
         <Container>
+            <Modal size="sm" backdrop="static" overflow={false} keyboard={false} open={openDangVienModal} onClose={() => setOpenDangVienModal(!openDangVienModal)} className="cus-modal">
+                <Modal.Header>
+                    <Modal.Title><b>Thêm mới</b></Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body>
+                    <Grid container spacing={2} >
+                        <Grid item lg={12} md={12} sm={12} xs={12} >
+                            <Grid container spacing={1} className="div-form">
+
+                                <Grid item lg={12} md={12} sm={12} xs={12} >
+                                    <p className='pb-2 pt-2'><span className='red'>* </span>Tiêu đề</p>
+                                    <Input placeholder="" className='input-formx' />
+                                </Grid>
+
+                                <Grid item lg={6} md={6} sm={6} xs={6} >
+                                    <p className='pb-2 pt-2'><span className='red'>* </span>Số tiều liệu</p>
+                                    <Input placeholder="" className='input-formx' />
+                                </Grid>
+                                <Grid item lg={6} md={6} sm={6} xs={6} >
+                                    <p className='pb-2 pt-2'><span className='red'>* </span>Ngày ban hành</p>
+                                    <DatePicker format="dd-MM-yyyy HH:ss" oneTap className='input-formx' />
+                                </Grid>
+
+
+                                <Grid item lg={12} md={12} sm={12} xs={12} >
+                                    <p className='pb-2 pt-2'><span className='red'>* </span>Loại</p>
+                                    <Form.Group controlId="radioList" >
+                                        <RadioGroup name="radioList" inline value={"A"}>
+                                            <Radio value="A">Ảnh</Radio>
+                                            <Radio value="B">Tài liệu</Radio>
+                                        </RadioGroup>
+                                    </Form.Group>
+                                </Grid>
+                                <Grid item lg={12} md={12} sm={12} xs={12} >
+                                    <p className='pb-2 pt-2'><span className='red'>* </span>Tài liệu đính kèm</p>
+                                    <Button appearance="ghost" className='div-flex bor-ra-3' size="md" onClick={() => setOpenDangVienModal(true)}>
+                                        <Icon className="icon icon-search">file_upload</Icon> Tải tệp
+                                    </Button>
+                                </Grid>
+                                <Grid item lg={12} md={12} sm={12} xs={12} >
+                                    <p className='pb-2 pt-2'> Ghi chú</p>
+                                    <Input placeholder="" className='input-formx' as="textarea" />
+                                </Grid>
+                                <Grid item lg={12} md={12} sm={12} xs={12} >
+                                    <p className='pb-2 pt-2'><span className='red'>* </span>Sở cứ</p>
+                                    <SelectPicker size="sm" data={[]} disabled placeholder="Sinh hoạt Chi bộ III - Khối văn phòng tháng 3/2023" className='input-formx' />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button appearance="primary">
+                        Thêm mới
+                    </Button>
+                    <Button onClick={() => setOpenDangVienModal(!openDangVienModal)} appearance="default">
+                        Thoát
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <Breadcrumb routeSegments={[{ name: "Sinh hoạt thường kỳ", path: "/par/dangvien" }]} />
             <SimpleCard >
                 <Stack wrap className="table-toolbar" justifyContent="space-between">
@@ -94,7 +158,7 @@ export default function Buoc4Table() {
                                 <Stack wrap className="table-toolbar" justifyContent="space-between">
                                     <Stack wrap spacing={6}>
                                         <Stack wrap spacing={6}>
-                                            <Button appearance="primary" className='div-flex bor-ra-3' size="md" >
+                                            <Button appearance="primary" className='div-flex bor-ra-3' size="md" onClick={() => setOpenDangVienModal(true)}>
                                                 <Icon className="icon icon-search">add</Icon> Thêm mới
                                             </Button>
 
