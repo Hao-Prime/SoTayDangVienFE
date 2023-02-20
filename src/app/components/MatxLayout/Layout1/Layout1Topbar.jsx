@@ -72,7 +72,16 @@ const IconBox = styled('div')(({ theme }) => ({
     display: 'inherit',
     [theme.breakpoints.down('md')]: { display: 'none !important' },
 }));
-
+const IconBoxPC = styled('div')(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    [theme.breakpoints.down('md')]: { display: 'none !important' },
+}));
+const IconBoxPhone = styled('div')(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    [theme.breakpoints.up('sm')]: { display: 'none !important' },
+}));
 const Layout1Topbar = () => {
     const theme = useTheme();
     const { settings, updateSettings } = useSettings();
@@ -128,11 +137,16 @@ const Layout1Topbar = () => {
 
                     <Box display="flex" alignItems="center">
                         {/* <MatxSearchBox /> */}
+                        <IconBoxPC>
+                            <Icon className='red-001 me-1'>assignment_ind</Icon>
+                            <SelectPicker className='red-quyen' data={[{ value: 1, label: "Bí thư - Chi bộ III - Khối văn phòng" }, { value: 2, label: "Đảng ủy viên - Đảng bộ Viễn Thông Long An" }]} searchable={false} cleanable={false} appearance="subtle" defaultValue={1} placeholder="Bí thư - Chi bộ III - Khối văn phòng" style={{ width: "auto" }} />
+                            <Icon className='red-001 me-1'>equalizer</Icon><span className='pointer me-2'> Điểm tích lũy: 15</span>
+                        </IconBoxPC>
+                        <IconBoxPhone>
+                            <Icon className='red-001 me-1'>assignment_ind</Icon>
+                            <SelectPicker className='red-quyen' data={[{ value: 1, label: "Bí thư - Chi bộ III - Khối văn phòng" }, { value: 2, label: "Đảng ủy viên - Đảng bộ Viễn Thông Long An" }]} searchable={false} cleanable={false} appearance="subtle" defaultValue={1} placeholder="Bí thư - Chi bộ III - Khối văn phòng" style={{ width: "100px" }} />
 
-                        <Icon className='red-001 me-1'>assignment_ind</Icon>
-                        <SelectPicker className='red-quyen' data={[{ value: 1, label: "Bí thư - Chi bộ III - Khối văn phòng" }, { value: 2, label: "Đảng ủy viên - Đảng bộ Viễn Thông Long An" }]} searchable={false} cleanable={false} appearance="subtle" defaultValue={1} placeholder="Bí thư - Chi bộ III - Khối văn phòng" style={{ width: "auto" }} />
-
-
+                        </IconBoxPhone>
                         <NotificationProvider>
                             <NotificationBar />
                         </NotificationProvider>

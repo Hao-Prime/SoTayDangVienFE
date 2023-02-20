@@ -69,7 +69,7 @@ const ThongKeDangVienSuDung = () => {
         item => ({ label: item, value: item })
     );
     return (
-        <Card elevation={3} sx={{ pt: '20px', pb: '20px' }}>
+        <Card elevation={3} sx={{ pt: '20px', pb: '20px', pl: "10px" }}>
             <Grid container spacing={3}>
                 <Grid item lg={8} md={8} sm={12} xs={12} >
                     <div className="ps-3" >
@@ -85,7 +85,7 @@ const ThongKeDangVienSuDung = () => {
 
                 </Grid>
                 <Grid item lg={4} md={4} sm={12} xs={12} sx={{ p: '20px' }}>
-                    <p className='pb-2 pt-2'><b>Sử dụng nhiều nhất</b></p>
+                    <p className='pb-2 pt-2 '><b>Sử dụng nhiều nhất</b></p>
                     <Grid container spacing={1} className="form-cus-36">
 
                         <Grid item lg={6} md={6} sm={6} xs={6} >

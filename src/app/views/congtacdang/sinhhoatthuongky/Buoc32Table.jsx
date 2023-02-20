@@ -14,9 +14,13 @@ import SpeakerIcon from '@rsuite/icons/Speaker';
 import 'suneditor/dist/css/suneditor.min.css';
 import FileTable from './FileTable';
 import { Table, CustomCell, CustomHeaderCell2, Column, Container, ColumnGroup } from 'app/components/TableRsuite/TableCustomRsuite';
+import BieuQuetModal from './BieuQuetModal';
+import BieuQuetKetQuaModal from './BieuQuetKetQuaModal';
 
 export default function Buoc32Table() {
     const navigate = useNavigate();
+    const [open1, setOpen1] = useState(false);
+    const [open2, setOpen2] = useState(false);
     const [windowScreen, setWindowScreen] = useState(window.screen.width > 1000);
     const [loading, setLoading] = useState(false);
     const [listDangVien, setListDangVien] = useState([
@@ -85,6 +89,8 @@ export default function Buoc32Table() {
     }, []);
     return (
         <Container>
+            <BieuQuetModal open={open1} setOpen={setOpen1} />
+            <BieuQuetKetQuaModal open={open2} setOpen={setOpen2} />
             <Breadcrumb routeSegments={[{ name: "Sinh hoạt thường kỳ", path: "/par/dangvien" }]} />
             <SimpleCard >
                 <Stack wrap className="table-toolbar" justifyContent="space-between">
@@ -178,12 +184,15 @@ export default function Buoc32Table() {
                                     <Button color="red" appearance="primary" className='div-flex bor-ra-3 w-110' size="md">
                                         <Icon className="icon icon-search-2">save</Icon> Cập nhật
                                     </Button>
-                                    <Button color="red" appearance="primary" className='div-flex bor-ra-3 w-110' size="md" disabled>
+                                    <Button color="red" appearance="primary" className='div-flex bor-ra-3 w-110' size="md" onClick={() => setOpen1(true)}>
                                         <Icon className="icon icon-search-2">border_color</Icon> Biểu quyết
                                     </Button>
-                                    <Button color="red" appearance="primary" className='div-flex bor-ra-3 w-180' size="md">
-                                        <Icon className="icon icon-search-2">assignment</Icon> Nội dung biểu quyết
-                                    </Button>
+
+                                    <Dropdown color="red" appearance="primary" size="md" title={<div className='div-flex'><Icon className="icon icon-search-2">assignment</Icon> Nội dung biểu quyết</div>}>
+                                        <Dropdown.Item>Kết thúc biểu quyết</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => setOpen2(true)}>Xem kết quả</Dropdown.Item>
+
+                                    </Dropdown>
                                     <NavLink to="/quanly/congtacdamg/shthuongky/buoc33" >
                                         <Button className='div-flex bor-ra-3 w-110' size="md" >
                                             <Icon className="icon icon-search pointer ">arrow_forward</Icon> Tiếp tục
@@ -196,7 +205,7 @@ export default function Buoc32Table() {
                     </Grid>
                 </Grid>
 
-                <div style={{ padding: "20px" }}>
+                <div style={{ padding: "50px" }}>
 
                 </div>
             </SimpleCard>

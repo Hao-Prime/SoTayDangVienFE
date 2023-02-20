@@ -1,7 +1,7 @@
 export const navigations = [
     { name: 'Trang chủ', path: '/dashboard/default', icon: 'dashboard' },
     { name: 'Lịch công tác', path: '/dashboard/default1', icon: 'event_available' },
-    { name: 'Tin tức', path: '/dashboard/default2', icon: 'featured_play_list' },
+    { name: 'Tin tức', path: '/quanly/tintuc', icon: 'featured_play_list' },
     // { label: 'QUẢN LÝ', type: 'label' },
     {
         name: 'Công tác Đảng',
@@ -17,7 +17,7 @@ export const navigations = [
     { name: 'Thông báo', path: '/dashboard/default3', icon: 'volume_down' },
     { name: 'Học tập nghị quyết', path: '/dashboard/default4', icon: 'account_balance_wallet' },
     { name: 'Bản tin thông báo nội bộ', path: '/dashboard/default5', icon: 'local_play' },
-    { name: 'Văn kiên - Tự liệu', path: '/dashboard/default6', icon: 'folder_open' },
+    { name: 'Văn kiên - Tự liệu', path: '/quanly/vankien', icon: 'folder_open' },
     { name: 'Văn bản mới', path: '/dashboard/default7', icon: 'library_books' },
     { name: 'Lưu trữ yêu thích', path: '/dashboard/default8', icon: 'star_border' },
     {
@@ -54,23 +54,23 @@ export const navigations = [
         ],
     },
 
-    // {
+    {
 
-    //     name: 'Đảng viên',
-    //     icon: 'badge',
-    //     path: '/quanly/dangvien',
-    // },
+        name: 'Đảng viên',
+        icon: 'badge',
+        path: '/quanly/dangvien',
+    },
 
-    // {
-    //     name: 'Chi bộ',
-    //     icon: 'local_police',
-    //     path: '/quanly/chibo',
-    // },
-    // {
-    //     name: 'Quần chúng ưu tú',
-    //     icon: 'groups2',
-    //     path: '/quanly/quanchunguutu',
-    // },
+    {
+        name: 'Chi bộ',
+        icon: 'local_police',
+        path: '/quanly/chibo',
+    },
+    {
+        name: 'Quần chúng ưu tú',
+        icon: 'groups2',
+        path: '/quanly/quanchunguutu',
+    },
     // {
     //     name: 'Đảng phí',
     //     icon: 'attach_money',
@@ -107,15 +107,15 @@ export const navigations = [
         ],
 
     },
-    {
-        name: 'Thống kê công tác Đảng',
-        icon: 'assignment',
-        path: '/material/table',
-        children: [
-            { name: 'Học tập nghị quyết', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke1' },
-            { name: 'Sinh hoạt đảng', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke1' },
-        ],
-    },
+    // {
+    //     name: 'Thống kê công tác Đảng',
+    //     icon: 'assignment',
+    //     path: '/material/table',
+    //     children: [
+    //         { name: 'Học tập nghị quyết', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke1' },
+    //         { name: 'Sinh hoạt đảng', iconText: 'TC', path: '/quanly/thongke/tonghop/thongke1' },
+    //     ],
+    // },
     {
         name: 'Thống kê tổng hợp',
         icon: 'assessment',

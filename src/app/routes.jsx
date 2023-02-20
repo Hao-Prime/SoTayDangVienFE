@@ -33,6 +33,8 @@ import Buoc5Table from './views/congtacdang/sinhhoatthuongky/Buoc5Table';
 import SinhHoatChuyenDeTable from './views/congtacdang/sinhhoatchuyende/SinhHoatChuyenDeTable';
 import NhiemVuCuaToiTable from './views/congtacdang/nhiemvucuatoi/NhiemVuCuaToiTable';
 import TongHopNhiemVuTable from './views/congtacdang/tonghopnhiemvu/TongHopNhiemVuTable';
+import TinTucTable from './views/tintuc/TinTucTable';
+import VanKienTuLieuTable from './views/vankientulieu/VanKienTuLieuTable';
 
 const BaoCaoKetQuaDanhGiaTable = Loadable(lazy(() => import('./views/thongke/dangvien/baocaoketquadanhgia/BaoCaoKetQuaDanhGiaTable')));
 const DangVienXuatSacTable = Loadable(lazy(() => import('./views/thongke/dangvien/theodoidangvienxuatsac/DangVienXuatSacTable')));
@@ -91,6 +93,8 @@ const routes = [
       { path: '/quanly/congtacdamg/nvcuatoi', element: <NhiemVuCuaToiTable /> },
       { path: '/quanly/congtacdamg/tonghopnhiemvu', element: <TongHopNhiemVuTable /> },
 
+      { path: '/quanly/tintuc', element: <TinTucTable /> },
+      { path: '/quanly/vankien', element: <VanKienTuLieuTable /> },
       ...dashboardRoutes,
       // ...chartsRoute, 
       // ...materialRoutes
