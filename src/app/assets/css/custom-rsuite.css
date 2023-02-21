@@ -57,7 +57,7 @@ body {
 
 .rs-table-body-row-wrapper {
     overflow: scroll !important;
-    overscroll-behavior-y: none;
+    /* overscroll-behavior-y: none; */
 
 
 }
@@ -144,15 +144,25 @@ body {
 }
 
 .MuiInputLabel-root {
-    top: -5px;
+    top: -8px;
+    font-size: 14px;
+}
+
+.font13 .rs-stack-item {
+    font-size: 14px;
 }
 
 .MuiInputLabel-shrink {
     top: 2px;
 }
 
+.modal-font13 * {
+    font-size: 14px !important;
+}
+
 .MuiOutlinedInput-input {
     padding: 7.5px 14px;
+    font-size: 14px;
 }
 
 .MuiAutocomplete-root .MuiOutlinedInput-root {
@@ -255,7 +265,8 @@ p {
 }
 
 .MuiOutlinedInput-root {
-    padding: 4px !important;
+    /* padding: 4px !important; */
+    height: 36px;
 }
 
 .rs-input-group.rs-input-group-inside .rs-input-group-addon {

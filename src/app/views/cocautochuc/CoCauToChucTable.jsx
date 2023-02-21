@@ -344,7 +344,7 @@ const CoCauToChucTable = () => {
                 {/* <div className='form-table'> */}
                 <Stack wrap className="table-toolbar" justifyContent="space-between">
                     <Stack wrap spacing={6}>
-                        <Button appearance="primary" className='div-flex' size="sm" onClick={handleThemDangVien} disabled>
+                        <Button appearance="primary" className='div-flex' size="sm" onClick={handleThemDangVien}>
                             <Icon className="icon icon-search">add</Icon> Thêm mới
                         </Button>
                         <Button appearance="subtle" className='div-flex' size="sm" onClick={handleThemDangVien} disabled>

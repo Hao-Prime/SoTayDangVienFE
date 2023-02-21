@@ -1,6 +1,6 @@
 export const navigations = [
     { name: 'Trang chủ', path: '/dashboard/default', icon: 'dashboard' },
-    { name: 'Lịch công tác', path: '/dashboard/default1', icon: 'event_available' },
+    { name: 'Lịch công tác', path: '/quanly/lichcongtac', icon: 'event_available' },
     { name: 'Tin tức', path: '/quanly/tintuc', icon: 'featured_play_list' },
     // { label: 'QUẢN LÝ', type: 'label' },
     {
@@ -14,21 +14,23 @@ export const navigations = [
             { name: 'Tổng hợp nhiệm vụ', iconText: 'HT', path: '/quanly/congtacdamg/tonghopnhiemvu' },
         ],
     },
-    { name: 'Thông báo', path: '/dashboard/default3', icon: 'volume_down' },
-    { name: 'Học tập nghị quyết', path: '/dashboard/default4', icon: 'account_balance_wallet' },
-    { name: 'Bản tin thông báo nội bộ', path: '/dashboard/default5', icon: 'local_play' },
+    { name: 'Thông báo', path: '/quanly/thongbao', icon: 'volume_down' },
+    { name: 'Học tập nghị quyết', path: '/quanly/hoctapnghiquyet', icon: 'account_balance_wallet' },
+    { name: 'Bản tin thông báo nội bộ', path: '/quanly/tinnoibo', icon: 'local_play' },
     { name: 'Văn kiên - Tự liệu', path: '/quanly/vankien', icon: 'folder_open' },
-    { name: 'Văn bản mới', path: '/dashboard/default7', icon: 'library_books' },
-    { name: 'Lưu trữ yêu thích', path: '/dashboard/default8', icon: 'star_border' },
+    { name: 'Cơ cấu tổ chức', icon: 'account_balance', path: '/quanly/cocautochuc', },
     {
         name: 'Gửi nhận văn bản',
         icon: 'present_to_all',
         children: [
-            { name: 'Gửi văn bản', iconText: 'TC', path: '/quanly/vanban/tatca' },
-            { name: 'Nhân văn bản', iconText: 'XL', path: '/quanly/vanban/daxuly?loai=2' }
+            { name: 'Gửi văn bản', iconText: 'TC', path: '/quanly/vanban/guivanban' },
+            { name: 'Nhân văn bản', iconText: 'XL', path: '/quanly/vanban/nhanvanban' }
         ],
     },
-    { name: 'Cơ cấu tổ chức', icon: 'account_balance', path: '/quanly/cocautochuc', },
+    { name: 'Văn bản mới', path: '/dashboard/default7', icon: 'library_books' },
+    { name: 'Lưu trữ yêu thích', path: '/dashboard/default8', icon: 'star_border' },
+
+
     { name: 'Xếp hạng', path: '/dashboard/default10', icon: 'rate_review' },
     {
         name: 'Văn bản',

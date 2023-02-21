@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Modal, DatePicker } from 'rsuite';
+import { Button, Modal, DatePicker, Divider } from 'rsuite';
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import {
@@ -181,7 +181,7 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
     // } = state;
     return (
         <>
-            <Modal size="md" backdrop="static" keyboard={false} open={open} onClose={handleClose} className="cus-modal">
+            <Modal size="md" backdrop="static" overflow={false} keyboard={false} open={open} onClose={handleClose} className="cus-modal">
                 <Modal.Header>
                     <Modal.Title><b>ĐẢNG VIÊN</b></Modal.Title>
                 </Modal.Header>
@@ -189,11 +189,13 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
                 <Modal.Body>
                     {!loading &&
                         <ValidatorForm onSubmit={handleThem} onError={() => console.log("onError")}>
-                            <Grid container spacing={1} >
-                                <Grid item lg={12} md={12} sm={12} xs={12} sx={{ m: 2 }}>
-                                    <Grid container spacing={2} >
+                            <Grid container spacing={1} className="div-form">
+                                <Grid item lg={12} md={12} sm={12} xs={12} sx={{ m: 2 }} >
+                                    <Grid container spacing={2} className="form-cus font13">
                                         <Grid item lg={6} md={6} sm={6} xs={12} >
+                                            <h3 className='m-0 mb-2'>Thông tin cá nhân</h3>
                                             <TextField
+
                                                 type="text"
                                                 name="hoTen"
                                                 value={dangVien.hoTen || ""}
@@ -204,6 +206,7 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
                                             />
                                             <TextField
                                                 type="text"
+
                                                 name="soCMND"
                                                 value={dangVien.soCMND || ""}
                                                 onChange={handleChange}
@@ -230,35 +233,36 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
                                                 validators={["required"]}
                                             />
 
+                                            <div className='modal-font13'>
+
+                                                <RadioGroup
+                                                    row
+                                                    name="gioiTinh"
+                                                    sx={{ mb: 2 }}
+                                                    value={dangVien.gioiTinh}
+                                                    onChange={handleChange}
+                                                >
+                                                    <FormControlLabel
+                                                        value={true}
+                                                        label="Nam"
+                                                        labelPlacement="end"
+                                                        control={<Radio color="secondary" />}
+                                                    />
+
+                                                    <FormControlLabel
+                                                        value={false}
+                                                        label="Nữ"
+                                                        labelPlacement="end"
+                                                        control={<Radio color="secondary" />}
+                                                    />
 
 
-                                            <RadioGroup
-                                                row
-                                                name="gioiTinh"
-                                                sx={{ mb: 2 }}
-                                                value={dangVien.gioiTinh}
-                                                onChange={handleChange}
-                                            >
-                                                <FormControlLabel
-                                                    value={true}
-                                                    label="Nam"
-                                                    labelPlacement="end"
-                                                    control={<Radio color="secondary" />}
-                                                />
-
-                                                <FormControlLabel
-                                                    value={false}
-                                                    label="Nữ"
-                                                    labelPlacement="end"
-                                                    control={<Radio color="secondary" />}
-                                                />
-
-
-                                            </RadioGroup>
+                                                </RadioGroup></div>
                                             <div className="pos-relative">
                                                 <div className="input-lable" style={{ top: "-8px" }}><p className="text-lable">Ngày sinh <span className='red'>*</span></p></div>
                                                 <DatePicker oneTap
                                                     format="dd-MM-yyyy"
+                                                    className='input-formx'
                                                     defaultValue={dangVien.ngaySinh == null ? null : new Date(dangVien.ngaySinh?.substring(0, 10))}
                                                     calendarDefaultDate={dangVien.ngaySinh == null ? null : new Date(dangVien.ngaySinh?.substring(0, 10))}
                                                     onChange={(e) => { handleSelectChange("ngaySinh", e?.toJSON()?.substring(0, 10)) }} />
@@ -274,6 +278,16 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
 
                                             // validators={["required", "minStringLength: 9", "maxStringLength: 12"]}
                                             />
+                                            <TextField
+                                                type="text"
+                                                name="queQuan"
+                                                value={dangVien.queQuan || ""}
+                                                onChange={handleChange}
+                                                // errorMessages={["Số điện thoại không hơp lệ"]}
+                                                label="Nơi cư tru"
+
+                                            // validators={["required", "minStringLength: 9", "maxStringLength: 12"]}
+                                            />
                                             <Autocomplete
                                                 value={dangVien.trinhDoChuyenMon}
                                                 onChange={(event, newValue) => { handleSelectChange("trinhDoChuyenMon", newValue); }}
@@ -281,7 +295,43 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
                                                 getOptionLabel={(option) => option.ten}
                                                 renderInput={(params) => (
                                                     <TextField {...params}
-                                                        label={<span>{"Trình độ chuyên môn "}<span className='red'>*</span></span>}
+                                                        label={<span>{"Trình độ giáo dục phổ thông "}<span className='red'>*</span></span>}
+
+                                                        variant="outlined" fullWidth />
+                                                )}
+                                            />
+                                            <Autocomplete
+                                                value={dangVien.trinhDoChuyenMon}
+                                                onChange={(event, newValue) => { handleSelectChange("trinhDoChuyenMon", newValue); }}
+                                                options={listTDCM}
+                                                getOptionLabel={(option) => option.ten}
+                                                renderInput={(params) => (
+                                                    <TextField {...params}
+                                                        label={<span>{"Trình độ chuyên môn nghiệp vụ"}<span className='red'>*</span></span>}
+
+                                                        variant="outlined" fullWidth />
+                                                )}
+                                            />
+                                            <Autocomplete
+                                                value={dangVien.trinhDoChuyenMon}
+                                                onChange={(event, newValue) => { handleSelectChange("trinhDoChuyenMon", newValue); }}
+                                                options={listTDCM}
+                                                getOptionLabel={(option) => option.ten}
+                                                renderInput={(params) => (
+                                                    <TextField {...params}
+                                                        label={<span>{"Chức danh khoa học"}</span>}
+
+                                                        variant="outlined" fullWidth />
+                                                )}
+                                            />
+                                            <Autocomplete
+                                                value={dangVien.trinhDoChuyenMon}
+                                                onChange={(event, newValue) => { handleSelectChange("trinhDoChuyenMon", newValue); }}
+                                                options={listTDCM}
+                                                getOptionLabel={(option) => option.ten}
+                                                renderInput={(params) => (
+                                                    <TextField {...params}
+                                                        label={<span>{"Nghề nghiệp "}<span className='red'>*</span></span>}
 
                                                         variant="outlined" fullWidth />
                                                 )}
@@ -297,13 +347,47 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
                                                         variant="outlined" fullWidth />
                                                 )}
                                             />
-
+                                            <Autocomplete
+                                                value={dangVien.chucVuChuyenMon}
+                                                onChange={(event, newValue) => { handleSelectChange("chucVuChuyenMon", newValue); }}
+                                                options={listCVCM}
+                                                getOptionLabel={(option) => option.ten}
+                                                renderInput={(params) => (
+                                                    <TextField {...params}
+                                                        label={<span>{"Dân tộc "}<span className='red'>*</span></span>}
+                                                        variant="outlined" fullWidth />
+                                                )}
+                                            />
+                                            <Autocomplete
+                                                value={dangVien.chucVuChuyenMon}
+                                                onChange={(event, newValue) => { handleSelectChange("chucVuChuyenMon", newValue); }}
+                                                options={listCVCM}
+                                                getOptionLabel={(option) => option.ten}
+                                                renderInput={(params) => (
+                                                    <TextField {...params}
+                                                        label={<span>{"Tôn giáo "}<span className='red'>*</span></span>}
+                                                        variant="outlined" fullWidth />
+                                                )}
+                                            />
                                         </Grid>
 
-                                        <Grid item lg={6} md={6} sm={6} xs={12} >
 
-                                            <div className="pos-relative">
+
+
+
+                                        <Grid item lg={6} md={6} sm={6} xs={12} >
+                                            <h3 className='m-0 mb-2'>Thông tin Đảng</h3>
+                                            <div className="pos-relative modal-font13">
                                                 <div className="input-lable" style={{ top: "-8px" }}><p className="text-lable">Ngày vào Đảng  <span className='red'>*</span></p></div>
+                                                <DatePicker oneTap
+                                                    format="dd-MM-yyyy"
+                                                    defaultValue={dangVien.ngayVaoDang == null ? null : new Date(dangVien.ngayVaoDang?.substring(0, 10))}
+                                                    calendarDefaultDate={dangVien.ngayVaoDang == null ? null : new Date(dangVien.ngayVaoDang?.substring(0, 10))}
+                                                    onChange={(e) => { handleSelectChange("ngayVaoDang", e?.toJSON()?.substring(0, 10)) }} />
+
+                                            </div>
+                                            <div className="pos-relative modal-font13">
+                                                <div className="input-lable" style={{ top: "-8px" }}><p className="text-lable">Ngày vào chính thức  <span className='red'>*</span></p></div>
                                                 <DatePicker oneTap
                                                     format="dd-MM-yyyy"
                                                     defaultValue={dangVien.ngayVaoDang == null ? null : new Date(dangVien.ngayVaoDang?.substring(0, 10))}
@@ -322,6 +406,15 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
                                             />
                                             <TextField
                                                 type="text"
+                                                name="soTheDang"
+                                                value={dangVien.soTheDang || ""}
+                                                onChange={handleChange}
+                                                errorMessages={["Số thẻ Đàng không hơp lệ"]}
+                                                label={<span>{"Số lý lịch "}<span className='red'>*</span></span>}
+                                                validators={["required"]}
+                                            />
+                                            <TextField
+                                                type="text"
                                                 name="noiCongTac"
                                                 value={dangVien.noiCongTac || ""}
                                                 onChange={handleChange}
@@ -334,7 +427,7 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
                                                 getOptionLabel={(option) => option.ten}
                                                 renderInput={(params) => (
                                                     <TextField {...params}
-                                                        label={<span>{"Trình độ chính trị "}<span className='red'>*</span></span>}
+                                                        label={<span>{"Trình độ lý luận chính trị "}<span className='red'>*</span></span>}
                                                         variant="outlined" fullWidth />
                                                 )}
                                             />
@@ -360,29 +453,63 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
                                                         variant="outlined" fullWidth />
                                                 )}
                                             />
-                                            <RadioGroup
-                                                row
-                                                name="trangThaiDangVien"
-                                                sx={{ mb: 2 }}
-                                                value={dangVien.trangThaiDangVien}
+                                            <Autocomplete
+                                                value={dangVien.chiBo}
+                                                onChange={(event, newValue) => { handleSelectChange("chiBo", newValue); }}
+                                                options={listCB}
+                                                getOptionLabel={(option) => option.ten}
+                                                renderInput={(params) => (
+                                                    <TextField {...params}
+                                                        label={<span>{"Trạng thái kết nạp "}<span className='red'>*</span></span>}
+                                                        variant="outlined" fullWidth />
+                                                )}
+                                            />
+                                            <Divider >Tài khoản</Divider>
+                                            <TextField
+
+                                                type="text"
+                                                name="hoTen"
+                                                value={dangVien.hoTen || ""}
                                                 onChange={handleChange}
-                                            >
-                                                <FormControlLabel
+                                                errorMessages={["", "Tên không hợp lệ", "Tên quá dài"]}
+                                                label={<span>Tên Đăng nhập <span className='red'>*</span></span>}
+                                                validators={["required", "minStringLength: 4", "maxStringLength: 30"]}
+                                            />
+                                            <TextField
+                                                type="text"
+
+                                                name="soCMND"
+                                                value={dangVien.soCMND || ""}
+                                                onChange={handleChange}
+                                                errorMessages={["Số CMND không hơp lệ"]}
+                                                label={<span>Mật khẩu <span className='red'>*</span></span>}
+                                                validators={["required", "minStringLength: 9", "maxStringLength: 12"]}
+                                            />
+                                            <div className='modal-font13'>
+                                                <RadioGroup
+                                                    row
+                                                    name="trangThaiDangVien"
+                                                    sx={{ mb: 2 }}
                                                     value={1}
-                                                    label="Hoạt động"
-                                                    labelPlacement="end"
-                                                    control={<Radio color="secondary" />}
-                                                />
+                                                    onChange={handleChange}
+                                                >
+                                                    <FormControlLabel
+                                                        value={1}
+                                                        label="Hoạt động"
+                                                        labelPlacement="end"
+                                                        control={<Radio color="secondary" />}
+                                                    />
 
-                                                <FormControlLabel
-                                                    value={0}
-                                                    label="Ngừng quản lý"
-                                                    labelPlacement="end"
-                                                    control={<Radio color="secondary" />}
-                                                />
+                                                    <FormControlLabel
+                                                        value={0}
+                                                        label="Ngừng quản lý"
+                                                        labelPlacement="end"
+                                                        control={<Radio color="secondary" />}
+                                                    />
 
 
-                                            </RadioGroup>
+                                                </RadioGroup>
+                                            </div>
                                         </Grid>
                                     </Grid>
 

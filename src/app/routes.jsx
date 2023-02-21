@@ -35,6 +35,12 @@ import NhiemVuCuaToiTable from './views/congtacdang/nhiemvucuatoi/NhiemVuCuaToiT
 import TongHopNhiemVuTable from './views/congtacdang/tonghopnhiemvu/TongHopNhiemVuTable';
 import TinTucTable from './views/tintuc/TinTucTable';
 import VanKienTuLieuTable from './views/vankientulieu/VanKienTuLieuTable';
+import ThongBaoTable from './views/thongbao/ThongBaoTable';
+import ThongBaoNoiBoTable from './views/thongbaonoibo/ThongBaoNoiBoTable';
+import HocTapNghiQuyetTable from './views/hoctapnghiquyet/HocTapNghiQuyetTable';
+import LichCongTacTable from './views/lichcongtac/LichCongTacTable';
+import GuiVanBanTable from './views/guinhanvanban/GuiVanBanTable';
+import NhanVanBanTable from './views/guinhanvanban/NhanVanBanTable';
 
 const BaoCaoKetQuaDanhGiaTable = Loadable(lazy(() => import('./views/thongke/dangvien/baocaoketquadanhgia/BaoCaoKetQuaDanhGiaTable')));
 const DangVienXuatSacTable = Loadable(lazy(() => import('./views/thongke/dangvien/theodoidangvienxuatsac/DangVienXuatSacTable')));
@@ -95,6 +101,12 @@ const routes = [
 
       { path: '/quanly/tintuc', element: <TinTucTable /> },
       { path: '/quanly/vankien', element: <VanKienTuLieuTable /> },
+      { path: '/quanly/thongbao', element: <ThongBaoTable /> },
+      { path: '/quanly/tinnoibo', element: <ThongBaoNoiBoTable /> },
+      { path: '/quanly/hoctapnghiquyet', element: <HocTapNghiQuyetTable /> },
+      { path: '/quanly/lichcongtac', element: <LichCongTacTable /> },
+      { path: '/quanly/vanban/guivanban', element: <GuiVanBanTable /> },
+      { path: '/quanly/vanban/nhanvanban', element: <NhanVanBanTable /> },
       ...dashboardRoutes,
       // ...chartsRoute, 
       // ...materialRoutes

@@ -4,6 +4,10 @@
     font-size: 13px;
 }
 
+.font13 {
+    font-size: 14px;
+}
+
 .h-100pt {
     height: 100%;
 }
@@ -27,12 +31,12 @@
 .div-tt1 {
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px 2px #ededed;
+    box-shadow: 0px 0px 5px 2px #f5f5f5;
 
 }
 
 .div-tt1:hover {
-    box-shadow: 0px 0px 6px 3px #d7d7d7;
+    box-shadow: 0px 0px 6px 3px #ebebeb;
 
 }
 
@@ -62,11 +66,11 @@
 .div-tt2 {
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px 2px #ededed;
+    box-shadow: 0px 0px 5px 2px #f6f6f6;
 }
 
 .div-tt2:hover {
-    box-shadow: 0px 0px 6px 3px #d7d7d7;
+    box-shadow: 0px 0px 6px 3px #ebebeb;
 
 }
 
@@ -158,6 +162,10 @@
 
 .bor-ra-3 {
     border-radius: 3px;
+}
+
+.w-25 {
+    width: 25px;
 }
 
 .w-110 {

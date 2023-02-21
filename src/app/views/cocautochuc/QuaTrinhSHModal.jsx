@@ -153,7 +153,7 @@ export default function QuaTrinhSHModal({ quaTrinhSinhHoatUp, open, setOpen, rel
                                     onChange={handleChange}
                                     label="Nội dung quá trình"
                                     multiline
-                                    rows={4}
+
                                 />
                             </Grid>
 

@@ -87,9 +87,9 @@ export default function ChiBoModal({ chiBoUp, open, setOpen, reloadList }) {
     const handleClose = () => { setOpen(false); setError(""); setChiBo(chiBoUtil.getChiBoThem()) };
     return (
         <>
-            <Modal backdrop="static" keyboard={false} open={open} onClose={handleClose} className="cus-modal">
+            <Modal size="md" overflow={false} backdrop="static" s keyboard={false} open={open} onClose={handleClose} className="cus-modal">
                 <Modal.Header>
-                    <Modal.Title><b>CHI BỘ</b></Modal.Title>
+                    <Modal.Title><b>ĐẢNG BỘ/CHI BỘ</b></Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
@@ -99,42 +99,107 @@ export default function ChiBoModal({ chiBoUp, open, setOpen, reloadList }) {
                                 <TextField
                                     type="text"
                                     name="ten"
-                                    value={chiBo.ten || ""}
+                                    value={"Đảng bộ viễn thông Long An"}
                                     onChange={handleChange}
+                                    disabled
                                     errorMessages={["", "Tên không hợp lệ", "Tên quá dài"]}
-                                    label={<span>Tên chi bộ <span className='red'>*</span></span>}
+                                    label={<span>Cấp trên trực thuộc <span className='red'>*</span></span>}
                                     validators={["required", "minStringLength: 4", "maxStringLength: 200"]}
-                                />
-
-                                <div className="pos-relative">
-                                    <div className="input-lable" style={{ top: "-8px" }}><p className="text-lable">Ngày thành lập  <span className='red'>*</span></p></div>
-                                    <DatePicker oneTap
-                                        format="dd-MM-yyyy"
-                                        defaultValue={chiBoUp.ngayThanhLap == null ? null : new Date(chiBoUp.ngayThanhLap?.substring(0, 10))}
-                                        calendarDefaultDate={chiBoUp.ngayThanhLap == null ? null : new Date(chiBoUp.ngayThanhLap?.substring(0, 10))}
-                                        onChange={(e) => { handleSelectChange("ngayThanhLap", e?.toJSON()?.substring(0, 10)) }} />
-
-                                </div>
-                                <Autocomplete
-                                    value={chiBo.dangBo}
-                                    onChange={(event, newValue) => { handleSelectChange("dangBo", newValue); }}
-                                    options={listDB}
-                                    getOptionLabel={(option) => option.ten}
-                                    renderInput={(params) => (
-                                        <TextField {...params}
-                                            label={<span>{"Thuộc Đảng bộ "}<span className='red'>*</span></span>}
-                                            variant="outlined" fullWidth />
-                                    )}
                                 />
                                 <TextField
                                     type="text"
-                                    name="moTa"
-                                    value={chiBo.moTa || ""}
+                                    name="ten"
+                                    value={chiBo.ten || ""}
                                     onChange={handleChange}
-                                    label="Nội dung, mô tả chi bộ"
-                                    multiline
-                                    rows={4}
+                                    errorMessages={["", "Tên không hợp lệ", "Tên quá dài"]}
+                                    label={<span>Tên cơ sở <span className='red'>*</span></span>}
+                                    validators={["required", "minStringLength: 4", "maxStringLength: 200"]}
                                 />
+                                <Grid container spacing={2} className="form-cus font13">
+                                    <Grid item lg={6} md={6} sm={6} xs={12} >
+                                        <div className="pos-relative">
+                                            <div className="input-lable" style={{ top: "-8px" }}><p className="text-lable">Ngày thành lập  <span className='red'>*</span></p></div>
+                                            <DatePicker oneTap
+                                                format="dd-MM-yyyy"
+                                                defaultValue={chiBoUp.ngayThanhLap == null ? null : new Date(chiBoUp.ngayThanhLap?.substring(0, 10))}
+                                                calendarDefaultDate={chiBoUp.ngayThanhLap == null ? null : new Date(chiBoUp.ngayThanhLap?.substring(0, 10))}
+                                                onChange={(e) => { handleSelectChange("ngayThanhLap", e?.toJSON()?.substring(0, 10)) }} />
+
+                                        </div>
+                                        <Autocomplete
+                                            value={chiBo.dangBo}
+                                            onChange={(event, newValue) => { handleSelectChange("dangBo", newValue); }}
+                                            options={listDB}
+                                            getOptionLabel={(option) => option.ten}
+                                            renderInput={(params) => (
+                                                <TextField {...params}
+                                                    label={<span>{"Nhóm đảng bộ "}<span className='red'>*</span></span>}
+                                                    variant="outlined" fullWidth />
+                                            )}
+                                        />
+                                    </Grid>
+                                    <Grid item lg={6} md={6} sm={6} xs={12} >
+
+                                        <Autocomplete
+                                            value={chiBo.dangBo}
+                                            onChange={(event, newValue) => { handleSelectChange("dangBo", newValue); }}
+                                            options={listDB}
+                                            getOptionLabel={(option) => option.ten}
+                                            renderInput={(params) => (
+                                                <TextField {...params}
+                                                    label={<span>{" Loại cơ sở Đảng "}<span className='red'>*</span></span>}
+                                                    variant="outlined" fullWidth />
+                                            )}
+                                        />
+                                        <Autocomplete
+                                            value={chiBo.dangBo}
+                                            onChange={(event, newValue) => { handleSelectChange("dangBo", newValue); }}
+                                            options={listDB}
+                                            getOptionLabel={(option) => option.ten}
+                                            renderInput={(params) => (
+                                                <TextField {...params}
+                                                    label={<span>{" Loại hình"}<span className='red'>*</span></span>}
+                                                    variant="outlined" fullWidth />
+                                            )}
+                                        />
+                                    </Grid>
+                                </Grid>
+
+                                <TextField
+                                    type="text"
+                                    name="ten"
+                                    value={chiBo.ten || ""}
+                                    onChange={handleChange}
+                                    errorMessages={["", "Tên không hợp lệ", "Tên quá dài"]}
+                                    label={<span>Địa chỉ <span className='red'>*</span></span>}
+                                    validators={["required", "minStringLength: 4", "maxStringLength: 200"]}
+                                />
+
+                                <Grid container spacing={2} className="form-cus font13">
+                                    <Grid item lg={6} md={6} sm={6} xs={12} >
+                                        <TextField
+                                            type="text"
+                                            name="moTa"
+                                            value={chiBo.moTa || ""}
+                                            onChange={handleChange}
+                                            label="Số điện thoại"
+                                            multiline
+
+                                        />
+                                    </Grid>
+                                    <Grid item lg={6} md={6} sm={6} xs={12} >
+                                        <TextField
+                                            type="text"
+                                            name="moTa"
+                                            value={chiBo.moTa || ""}
+                                            onChange={handleChange}
+                                            label="Thứ tự hiển thị"
+                                            multiline
+
+                                        />
+                                    </Grid>
+                                </Grid>
+
                             </Grid>
 
 

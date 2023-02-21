@@ -124,7 +124,7 @@ export default function DanhGiaModal({ listChiBo, xepLoaiUp, open, setOpen, relo
                                     onChange={handleChange}
                                     label="Nội dung, mô tả đánh giá"
                                     multiline
-                                    rows={4}
+
                                 />
                             </Grid>
 

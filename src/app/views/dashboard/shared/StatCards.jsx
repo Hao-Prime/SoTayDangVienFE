@@ -42,7 +42,7 @@ const StatCards = () => {
                 amount3: 22, amount4: 10
             },
             {
-                name: 'Thông tin nhiệm vụ', amount: '12', icon: 'file_present', link: "/quanly/vanban/dangxuly?loai=1",
+                name: 'Thông tin nhiệm vụ', amount: '12', icon: 'local_play', link: "/quanly/vanban/dangxuly?loai=1",
                 type: 2, name2: "Tổng số nhiệm vụ", name3: "Số nhiệm vụ đúng hạn: ", name4: "Số nhiệm vụ trễ hạn: ",
                 amount3: 0, amount4: 0
             },
