@@ -58,7 +58,7 @@ const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
   const { pathname } = useLocation();
   const { name, icon, iconText, badge } = item;
   const NavExpandRoot = styled('div')(({ theme }) => ({
-    background: !collapsed ? '#9b01016e' : "unset",
+    background: !collapsed ? '#9b0101a6' : "unset",
     borderRadius: "8px",
 
     '& .expandIcon': {

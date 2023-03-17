@@ -87,7 +87,7 @@ export default function ChiBoModal({ chiBoUp, open, setOpen, reloadList }) {
     const handleClose = () => { setOpen(false); setError(""); setChiBo(chiBoUtil.getChiBoThem()) };
     return (
         <>
-            <Modal size="md" overflow={false} backdrop="static" s keyboard={false} open={open} onClose={handleClose} className="cus-modal">
+            <Modal size="md" overflow={true} backdrop="static" keyboard={false} open={open} onClose={handleClose} className="cus-modal">
                 <Modal.Header>
                     <Modal.Title><b>ĐẢNG BỘ/CHI BỘ</b></Modal.Title>
                 </Modal.Header>

@@ -44,7 +44,7 @@ export default function BieuQuetKetQuaModal({ open, setOpen }) {
                                 <Grid item lg={12} md={12} sm={12} xs={12} >
                                     <Grid container spacing={1} className="div-form">
                                         <Grid item lg={12} md={12} sm={12} xs={12} className=' bold'>
-                                            Tán thành biểu quyết đồng ý thực hiện nhiệm vụ
+                                            Nội dung biểu quyết 1
                                         </Grid>
                                         <Grid item lg={4} md={4} sm={4} xs={4} >
                                             Thời gian bắt đầu : 21:36 20/02/2023<br />
@@ -71,7 +71,7 @@ export default function BieuQuetKetQuaModal({ open, setOpen }) {
                                 <Grid item lg={12} md={12} sm={12} xs={12} >
                                     <Grid container spacing={1} className="div-form">
                                         <Grid item lg={12} md={12} sm={12} xs={12} className=' bold'>
-                                            Đồng ý chủ trương đề ra
+                                            Nội dung biểu quyết 2
                                         </Grid>
                                         <Grid item lg={4} md={4} sm={4} xs={4} >
                                             Thời gian bắt đầu : 21:36 20/02/2023<br />
@@ -101,7 +101,7 @@ export default function BieuQuetKetQuaModal({ open, setOpen }) {
                                 <Grid item lg={12} md={12} sm={12} xs={12} className="form-cus">
                                     <Grid container spacing={1} className="div-form">
                                         <Grid item lg={12} md={12} sm={12} xs={12} className=' bold'>
-                                            Đồng ý chủ trương đề ra
+                                            Nội dung biểu quyết 2
                                         </Grid>
                                         <Grid item lg={4} md={4} sm={4} xs={4} >
                                             Thời gian bắt đầu : 21:36 20/02/2023<br />

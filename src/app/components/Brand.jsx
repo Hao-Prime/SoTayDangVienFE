@@ -3,6 +3,7 @@ import logo from '../assets/images/logo-VNPT.png';
 import useSettings from 'app/hooks/useSettings';
 import { Span } from './Typography';
 import { Icon } from '@mui/material';
+import { NavLink, useNavigate } from "react-router-dom";
 const BrandRoot = styled(Box)(() => ({
   display: 'flex',
   alignItems: 'center',
@@ -19,11 +20,12 @@ const StyledSpan = styled(Span)(({ mode }) => ({
 
 const Brand = ({ children }) => {
   const { settings } = useSettings();
+  const navigate = useNavigate();
   const leftSidebar = settings.layout1Settings.leftSidebar;
   const { mode } = leftSidebar;
 
   return (
-    <BrandRoot>
+    <BrandRoot className='pointer' onClick={() => navigate("/")} >
       <Box display="flex" alignItems="center">
         <img src={logo} width="27" />
         <StyledSpan mode={mode} className="sidenavHoverShow ps-2">

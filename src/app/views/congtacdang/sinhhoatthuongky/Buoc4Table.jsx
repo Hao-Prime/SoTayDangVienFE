@@ -89,7 +89,7 @@ export default function Buoc4Table() {
                                 </Grid>
 
                                 <Grid item lg={6} md={6} sm={6} xs={6} >
-                                    <p className='pb-2 pt-2'><span className='red'>* </span>Số tiều liệu</p>
+                                    <p className='pb-2 pt-2'><span className='red'>* </span>Số tài liệu</p>
                                     <Input placeholder="" className='input-formx' />
                                 </Grid>
                                 <Grid item lg={6} md={6} sm={6} xs={6} >
@@ -140,7 +140,7 @@ export default function Buoc4Table() {
                 <Stack wrap className="table-toolbar" justifyContent="space-between">
                     <Stack wrap spacing={6}>
                         <NavLink to="/quanly/congtacdamg/shthuongky/chitiet" ><Icon className="icon icon-search pointer ">arrow_back</Icon></NavLink>
-                        <p style={{ marginBottom: "5px" }}>Sinh hoạt Chi bộ III - Khối văn phòng tháng 2/2023 <b>/ Bước 4: Ra nghị quyết</b></p>
+                        <p style={{ marginBottom: "5px" }}>Sinh hoạt Chi bộ III - Khối văn phòng tháng 2/2023 <b>/ Bước 4: Ban hành nghị quyết</b></p>
                     </Stack>
                     <Stack spacing={6}>
                     </Stack>

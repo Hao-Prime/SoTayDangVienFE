@@ -38,7 +38,7 @@ export default function BieuQuetModal({ open, setOpen }) {
                             <Grid container spacing={1} className="div-form">
 
                                 <Grid item lg={12} md={12} sm={12} xs={12} >
-                                    <p className='pb-2 pt-2'><span className='red'>* </span>Tán thành biểu quyết đồng ý thực hiện nhiệm vụ</p>
+                                    <p className='pb-2 pt-2'><span className='red'>* </span>Nội dung biểu quyết 1</p>
                                     <Form.Group controlId="radioList" >
                                         <RadioGroup name="radioList" inline>
                                             <Radio value="A">Đồng ý</Radio>
@@ -49,7 +49,7 @@ export default function BieuQuetModal({ open, setOpen }) {
                                     </Form.Group>
                                 </Grid>
                                 <Grid item lg={12} md={12} sm={12} xs={12} >
-                                    <p className='pb-2 pt-2'><span className='red'>* </span>Đồng ý chủ trương đề ra</p>
+                                    <p className='pb-2 pt-2'><span className='red'>* </span>Nội dung biểu quyết 2</p>
                                     <Form.Group controlId="radioList" >
                                         <RadioGroup name="radioList" inline>
                                             <Radio value="A">Đồng ý</Radio>

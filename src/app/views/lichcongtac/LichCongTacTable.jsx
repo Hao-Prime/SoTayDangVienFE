@@ -53,7 +53,7 @@ export default function LichCongTacTable() {
 
             <SimpleCard >
                 <Grid container spacing={1} >
-                    <Grid item lg={3} md={3} sm={6} xs={6}>
+                    <Grid item lg={3} md={3} sm={12} xs={12}>
                         <Grid container spacing={1} >
                             <Grid item lg={12} md={12} sm={12} xs={12} className='ps-3 pe-2'>
                                 <Button color='red' appearance="primary" className='div-flex t-center' style={{ justifyContent: 'center', width: "100%" }} size="md">

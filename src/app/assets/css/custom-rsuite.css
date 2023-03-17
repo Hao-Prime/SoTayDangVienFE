@@ -154,6 +154,8 @@ body {
 
 .MuiInputLabel-shrink {
     top: 2px;
+    font-size: 15px;
+    color: #000258;
 }
 
 .modal-font13 * {
@@ -256,12 +258,12 @@ p {
 .ps .ps__rail-y:focus,
 .ps .ps__rail-x.ps--clicking,
 .ps .ps__rail-y.ps--clicking {
-    /* background-color: #eee; */
-    opacity: 0;
+    background-color: #eee0;
+    /* opacity: 0; */
 }
 
 .ps__thumb-y {
-    display: none;
+    /* display: none; */
 }
 
 .MuiOutlinedInput-root {

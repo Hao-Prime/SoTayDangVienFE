@@ -376,19 +376,21 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
 
 
                                         <Grid item lg={6} md={6} sm={6} xs={12} >
-                                            <h3 className='m-0 mb-2'>Thông tin Đảng</h3>
-                                            <div className="pos-relative modal-font13">
+                                            <h3 className='m-0 mb-2'>Hồ sơ Đảng viên</h3>
+                                            <div className="pos-relative ">
                                                 <div className="input-lable" style={{ top: "-8px" }}><p className="text-lable">Ngày vào Đảng  <span className='red'>*</span></p></div>
                                                 <DatePicker oneTap
+                                                    className='modal-font13'
                                                     format="dd-MM-yyyy"
                                                     defaultValue={dangVien.ngayVaoDang == null ? null : new Date(dangVien.ngayVaoDang?.substring(0, 10))}
                                                     calendarDefaultDate={dangVien.ngayVaoDang == null ? null : new Date(dangVien.ngayVaoDang?.substring(0, 10))}
                                                     onChange={(e) => { handleSelectChange("ngayVaoDang", e?.toJSON()?.substring(0, 10)) }} />
 
                                             </div>
-                                            <div className="pos-relative modal-font13">
+                                            <div className="pos-relative ">
                                                 <div className="input-lable" style={{ top: "-8px" }}><p className="text-lable">Ngày vào chính thức  <span className='red'>*</span></p></div>
                                                 <DatePicker oneTap
+                                                    className='modal-font13'
                                                     format="dd-MM-yyyy"
                                                     defaultValue={dangVien.ngayVaoDang == null ? null : new Date(dangVien.ngayVaoDang?.substring(0, 10))}
                                                     calendarDefaultDate={dangVien.ngayVaoDang == null ? null : new Date(dangVien.ngayVaoDang?.substring(0, 10))}
@@ -457,7 +459,7 @@ export default function DangVienModal({ dangVienUp, open, setOpen, reloadList })
                                                 value={dangVien.chiBo}
                                                 onChange={(event, newValue) => { handleSelectChange("chiBo", newValue); }}
                                                 options={listCB}
-                                                getOptionLabel={(option) => option.ten}
+                                                // getOptionLabel={(option) => option.ten}
                                                 renderInput={(params) => (
                                                     <TextField {...params}
                                                         label={<span>{"Trạng thái kết nạp "}<span className='red'>*</span></span>}

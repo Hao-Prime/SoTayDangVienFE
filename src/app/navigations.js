@@ -1,7 +1,12 @@
 export const navigations = [
     { name: 'Trang chủ', path: '/dashboard/default', icon: 'dashboard' },
-    { name: 'Lịch công tác', path: '/quanly/lichcongtac', icon: 'event_available' },
+    { label: 'TIN TỨC THÔNG BÁO', type: 'label' },
     { name: 'Tin tức', path: '/quanly/tintuc', icon: 'featured_play_list' },
+    { name: 'Thông báo', path: '/quanly/thongbao', icon: 'volume_down' },
+    { name: 'Bản tin thông báo nội bộ', path: '/quanly/tinnoibo', icon: 'local_play' },
+    { label: 'SỔ TAY ĐẢNG VIÊN', type: 'label' },
+    { name: 'Lịch công tác', path: '/quanly/lichcongtac', icon: 'event_available' },
+
     // { label: 'QUẢN LÝ', type: 'label' },
     {
         name: 'Công tác Đảng',
@@ -14,17 +19,17 @@ export const navigations = [
             { name: 'Tổng hợp nhiệm vụ', iconText: 'HT', path: '/quanly/congtacdamg/tonghopnhiemvu' },
         ],
     },
-    { name: 'Thông báo', path: '/quanly/thongbao', icon: 'volume_down' },
+
     { name: 'Học tập nghị quyết', path: '/quanly/hoctapnghiquyet', icon: 'account_balance_wallet' },
-    { name: 'Bản tin thông báo nội bộ', path: '/quanly/tinnoibo', icon: 'local_play' },
+
     { name: 'Văn kiên - Tự liệu', path: '/quanly/vankien', icon: 'folder_open' },
     { name: 'Cơ cấu tổ chức', icon: 'account_balance', path: '/quanly/cocautochuc', },
     {
-        name: 'Gửi nhận văn bản',
+        name: 'Gửi nhận tài liệu',
         icon: 'present_to_all',
         children: [
-            { name: 'Gửi văn bản', iconText: 'TC', path: '/quanly/vanban/guivanban' },
-            { name: 'Nhân văn bản', iconText: 'XL', path: '/quanly/vanban/nhanvanban' }
+            { name: 'Gửi tài liệu', iconText: 'TC', path: '/quanly/vanban/guivanban' },
+            { name: 'Nhân tài liệu', iconText: 'XL', path: '/quanly/vanban/nhanvanban' }
         ],
     },
     { name: 'Văn bản mới', path: '/dashboard/default7', icon: 'library_books' },
@@ -79,6 +84,11 @@ export const navigations = [
     //     path: 'http://demos.ui-lib.com/matx-react-doc/',
     // },
 
+    { label: 'NGHIỆP VỤ ĐẢNG', type: 'label' },
+    { name: 'Đánh giá xếp loại', path: '/quanly/tinnoibo', icon: 'chrome_reader_mode' },
+    { name: 'Hồ sơ sức khỏe', path: '/quanly/congtacdamg/shcapuy', icon: 'opacity' },
+    { name: 'Xét tuổi Đảng', path: '/quanly/congtacdamg/shthuongky', icon: 'spa' },
+    { name: 'Danh hiệu - Huy hiệu', path: '/quanly/congtacdamg/shchuyende', icon: 'turned_in' },
     { label: 'THỐNG KÊ', type: 'label' },
     // {
     //   name: 'Thống kê đảng viên',

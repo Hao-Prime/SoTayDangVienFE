@@ -23,7 +23,7 @@ export default function Buoc33Table() {
         { value1: 0, value3: "Bước 1: Chuẩn bị tài liệu họp", value2: "Đã thực hiện", value4: "/quanly/congtacdamg/shthuongky/buoc1" },
         { value1: 1, value3: "Bước 2: Tiếp nhận ý kiến kiến nghị", value2: "Không có kiến nghị", value4: "/quanly/congtacdamg/shthuongky/buoc2" },
         { value1: 1, value3: "Bước 3: Diễn biến cuộc họp", value2: "Chưa hoàn thiện", value4: "/quanly/congtacdamg/shthuongky/buoc3" },
-        { value1: 1, value3: "Bước 4: Ra nghị quyết", value2: "Không có nghị quyết nào được ban hành", value4: "/quanly/congtacdamg/shthuongky/buoc4" },
+        { value1: 1, value3: "Bước 4: Ban hành nghị quyết", value2: "Không có nghị quyết nào được ban hành", value4: "/quanly/congtacdamg/shthuongky/buoc4" },
         { value1: 1, value3: "Bước 5: Theo dõi nhiệm vụ", value2: "Không có nhiệm vụ được giao", value4: "/quanly/congtacdamg/shthuongky/buoc5" },
     ]);
 

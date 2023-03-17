@@ -111,7 +111,7 @@ const ThongKeDangVienSuDung = () => {
                         <Grid item lg={12} md={12} sm={12} xs={12} >
                             {
                                 data?.map((db, index) =>
-                                    <div className='div-flex-2 pointer mb-1 hovergray p-2 item-sltruycap'>
+                                    <div className='div-flex-2 pointer mb-1 hovergray p-2 item-sltruycap' key={index}>
                                         <Avatar className='me-3 mt-1' src={avatar} sx={{ cursor: 'pointer' }} />
                                         <span>
                                             <b>{db.label}</b> - Sử dụng: 54 lần<br />

@@ -26,7 +26,7 @@ RUN npm run build
 # # Run application
 # # CMD [ "npm", "start" ]
 # CMD serve -s build -p 3002
-# docker build -t haohi/qldangvien-fe:0.0.12 .
+# docker build -t haohi/stdv-fe:0.0.3 .
 # docker pull haohi/qldangvien:0.0.1
 # 
 #Test thử
@@ -34,4 +34,4 @@ FROM node:14.17.5-alpine
 COPY --from=build /app/build ./build
 RUN npm install -g serve
 # start app
-CMD serve -s build -p 3004
+CMD serve -s build -p 3006
